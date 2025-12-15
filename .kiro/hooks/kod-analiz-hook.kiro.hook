@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Kod Analizi ve Import Düzenleyici",
+  "description": "Python dosyalarında değişiklik yapıldığında otomatik olarak kod analizini çalıştırır, uyarı ve hataları tespit edip çözer. Ayrıca importları düzenler, gereksiz importları siler ve uygun şekilde sıralar.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "**/*.py"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Düzenlenen Python dosyasını analiz et ve şu işlemleri yap:\n\n1. **Kod Analizi:**\n   - Syntax hatalarını kontrol et\n   - Tanımsız değişken ve fonksiyon kullanımlarını tespit et\n   - Type hinting uyumsuzluklarını bul\n   - Potansiyel runtime hatalarını belirle\n\n2. **Uyarı ve Hata Çözümü:**\n   - Tespit edilen hataları düzelt\n   - Kullanılmayan değişkenleri kaldır veya uyar\n   - Best practice önerilerini uygula\n\n3. **Import Düzenlemesi:**\n   - Kullanılmayan importları sil\n   - Eksik importları ekle\n   - Importları şu sırayla düzenle:\n     a) Standart kütüphane importları (os, sys, typing vb.)\n     b) Üçüncü parti kütüphane importları (PyQt5, pandas vb.)\n     c) Yerel proje importları (src.*, vb.)\n   - Her grup arasında boş satır bırak\n   - Alfabetik sıralama uygula\n\n4. **Dosya Başlığı Kontrolü:**\n   - Dosya başlığının proje standartlarına uygun olduğunu kontrol et\n   - Eksikse ekle, varsa \"Son Güncelleme\" tarihini güncelle\n\nDeğişiklikleri uygula ve yapılan düzeltmelerin kısa bir özetini Türkçe olarak sun."
+  }
+}

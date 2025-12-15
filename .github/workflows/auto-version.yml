@@ -1,0 +1,61 @@
+name: Auto Version and Deploy
+
+on:
+  push:
+    branches: [ main, develop ]
+  schedule:
+    # Her 30 dakikada bir çalışır (isteğe bağlı)
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install bump2version
+    
+    - name: Configure Git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    
+    - name: Check for changes
+      id: changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Auto commit changes
+      if: steps.changes.outputs.changes == 'true'
+      run: |
+        git add .
+        git commit -m "Auto-update: $(date '+%Y-%m-%d %H:%M:%S')"
+    
+    - name: Bump version
+      if: steps.changes.outputs.changes == 'true'
+      run: |
+        # Patch version artırımı (0.1.0 -> 0.1.1)
+        bump2version patch --current-version $(cat VERSION 2>/dev/null || echo "0.1.0") --new-version
+    
+    - name: Push changes
+      if: steps.changes.outputs.changes == 'true'
+      run: |
+        git push origin ${{ github.ref_name }}
+        git push --tags

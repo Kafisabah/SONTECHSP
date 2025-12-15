@@ -1,0 +1,246 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sontechsp"
+version = "0.1.0"
+description = "SONTECHSP - Windows üzerinde çalışan çoklu mağaza POS + ERP + CRM sistemi"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "SONTECHSP Geliştirici Ekibi", email = "dev@sontechsp.com"}
+]
+keywords = ["pos", "erp", "crm", "retail", "windows", "pyqt6"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Point-Of-Sale",
+]
+
+dependencies = [
+    # GUI Framework
+    "PyQt6>=6.5.0",
+    "PyQt6-Qt6>=6.5.0",
+    
+    # Database ORM ve Migration
+    "SQLAlchemy>=2.0.0",
+    "alembic>=1.12.0",
+    "psycopg2-binary>=2.9.0",  # PostgreSQL driver
+    
+    # Web Framework (lokalde servis için)
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    
+    # Utility Libraries
+    "pydantic>=2.4.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.1.0",
+    "rich>=13.6.0",  # Console output formatting
+    
+    # Logging ve Configuration
+    "structlog>=23.2.0",
+    "python-json-logger>=2.0.0",
+    
+    # Date/Time handling
+    "python-dateutil>=2.8.0",
+    
+    # HTTP Client (entegrasyonlar için)
+    "httpx>=0.25.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    # Test Framework
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-mock>=3.12.0",
+    "pytest-xdist>=3.3.0",  # Paralel test çalıştırma
+    
+    # Property-Based Testing
+    "hypothesis>=6.88.0",
+    
+    # Code Quality
+    "black>=23.9.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "mypy>=1.6.0",
+    
+    # Development Tools
+    "pre-commit>=3.5.0",
+    "tox>=4.11.0",
+]
+
+build = [
+    # Windows Build Tools
+    "pyinstaller>=6.0.0",
+    "auto-py-to-exe>=2.40.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sontechsp/sontechsp"
+Documentation = "https://docs.sontechsp.com"
+Repository = "https://github.com/sontechsp/sontechsp.git"
+"Bug Tracker" = "https://github.com/sontechsp/sontechsp/issues"
+
+[project.scripts]
+sontechsp = "sontechsp.uygulama.ana:main"
+sontechsp-kurulum = "sontechsp.uygulama.kurulum.baslat:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sontechsp*"]
+exclude = ["tests*", "docs*"]
+
+[tool.setuptools.package-data]
+"sontechsp" = ["*.sql", "*.json", "*.yaml", "*.yml"]
+
+# PyInstaller Configuration
+[tool.pyinstaller]
+name = "SONTECHSP"
+console = false
+windowed = true
+icon = "assets/sontechsp.ico"
+add-data = [
+    "sontechsp/uygulama/veritabani/gocler;sontechsp/uygulama/veritabani/gocler",
+    "assets;assets"
+]
+hidden-imports = [
+    "PyQt6.QtCore",
+    "PyQt6.QtGui", 
+    "PyQt6.QtWidgets",
+    "sqlalchemy.dialects.postgresql",
+    "sqlalchemy.dialects.sqlite",
+    "alembic.runtime.migration",
+    "psycopg2",
+]
+exclude-modules = [
+    "tkinter",
+    "matplotlib",
+    "numpy",
+    "pandas"
+]
+
+# Test Configuration
+[tool.pytest.ini_options]
+testpaths = ["sontechsp/testler"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+    "--cov=sontechsp",
+    "--cov-report=term-missing",
+    "--cov-report=html:htmlcov",
+    "-m", "not slow",  # Varsayılan olarak yavaş testleri çalıştırma
+]
+markers = [
+    "unit: Birim testler (hızlı, izole)",
+    "integration: Entegrasyon testleri (orta hız)",
+    "property: Property-based testler (değişken hız)",
+    "slow: Yavaş çalışan testler (> 30 saniye)",
+    "critical: Kritik path testleri (CI/CD için)",
+    "smoke: Temel işlevsellik testleri",
+]
+
+# Hypothesis Configuration
+[tool.hypothesis]
+max_examples = 50  # Performans için azaltıldı
+deadline = 2000  # 2 saniye timeout
+suppress_health_check = ["too_slow", "filter_too_much", "data_too_large"]
+phases = ["explicit", "reuse", "generate", "target"]  # Hızlı profil
+
+# Pytest-xdist Configuration
+[tool.pytest-xdist]
+# Paralel test çalıştırma için otomatik worker sayısı
+auto_num_workers = true
+
+# Code Formatting
+[tool.black]
+line-length = 120
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+# Type Checking
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "PyQt6.*",
+    "psycopg2.*",
+    "alembic.*",
+]
+ignore_missing_imports = true
+
+# Coverage Configuration
+[tool.coverage.run]
+source = ["sontechsp"]
+omit = [
+    "*/tests/*",
+    "*/testler/*", 
+    "*/migrations/*",
+    "*/gocler/*",
+    "setup.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]

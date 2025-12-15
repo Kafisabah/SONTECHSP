@@ -1,0 +1,176 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  # Hızlı feedback için kritik testler
+  critical-tests:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run critical tests
+      run: |
+        pytest -m critical --tb=short -v --maxfail=5
+    
+    - name: Upload critical test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: critical-test-results
+        path: |
+          htmlcov/
+          .coverage
+
+  # Smoke testler - temel işlevsellik
+  smoke-tests:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    needs: critical-tests
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run smoke tests
+      run: |
+        pytest -m smoke --tb=short -v
+    
+    - name: Upload smoke test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: smoke-test-results
+        path: |
+          htmlcov/
+          .coverage
+
+  # Hızlı testler - paralel çalıştırma
+  fast-tests:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    needs: smoke-tests
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run fast tests (parallel)
+      run: |
+        pytest -m "not slow" -n auto --tb=short -v --maxfail=10
+    
+    - name: Upload fast test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: fast-test-results
+        path: |
+          htmlcov/
+          .coverage
+
+  # Tam test süiti - sadece main branch için
+  full-tests:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    needs: fast-tests
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run all tests (parallel)
+      run: |
+        pytest -n auto --tb=short -v --cov=sontechsp --cov-report=html --cov-report=xml
+    
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+    
+    - name: Upload full test results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: full-test-results
+        path: |
+          htmlcov/
+          coverage.xml
+          .coverage
+
+  # Performance testleri - haftalık
+  performance-tests:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    if: github.event_name == 'schedule' || contains(github.event.head_commit.message, '[perf]')
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .[dev]
+    
+    - name: Run performance tests
+      run: |
+        pytest -m slow --tb=short -v --durations=10
+    
+    - name: Upload performance results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: performance-test-results
+        path: |
+          htmlcov/
+          .coverage
