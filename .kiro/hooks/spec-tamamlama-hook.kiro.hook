@@ -1,0 +1,20 @@
+{
+  "name": "Spec Tamamlama Otomatik Commit",
+  "description": "Spec görevleri tamamlandığında otomatik olarak GitHub'a commit yapar",
+  "trigger": {
+    "type": "message",
+    "pattern": "spec.*tamamland|görev.*tamamland|task.*complet"
+  },
+  "action": {
+    "type": "command",
+    "command": "python scripts/spec-tamamlandi.py \"${spec_name}\" --version-type minor",
+    "variables": {
+      "spec_name": "Kullanıcı mesajından spec adını çıkar"
+    }
+  },
+  "enabled": true,
+  "conditions": [
+    "Git repository mevcut",
+    "Değişiklikler var"
+  ]
+}
