@@ -350,3 +350,11 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosy
 - PyQt6 entegrasyonu
 - PostgreSQL + SQLite desteği
 - Property-based testing altyapısı
+- **Gelişmiş Stok Yönetimi Sistemi** ✅
+  - Ürün yönetimi (CRUD işlemleri)
+  - Çoklu barkod desteği
+  - Stok hareket takibi (giriş/çıkış/sayım/transfer)
+  - Negatif stok kontrolü
+  - Eş zamanlı erişim kontrolü (PostgreSQL SELECT FOR UPDATE)
+  - Stok rezervasyon sistemi
+  - 20 Property-based test ile doğruluk garantisi

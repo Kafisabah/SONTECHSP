@@ -179,3 +179,8 @@ def oturum_baslat(kullanici_id: int, kullanici_adi: str,
 def oturum_sonlandir() -> bool:
     """Aktif oturumu sonlandırır (kısayol fonksiyon)"""
     return oturum_yoneticisi_al().oturum_sonlandir()
+
+
+def oturum_baglamini_al() -> Optional[OturumBilgisi]:
+    """Oturum bağlamını döndürür (kısayol fonksiyon)"""
+    return oturum_yoneticisi_al().aktif_oturum_al()

@@ -65,7 +65,7 @@ class KullaniciRol(Taban):
     atama_tarihi: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=datetime.utcnow, nullable=False)
     aktif: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     
-    kullanici: Mapped["Kullanici"] = relationship("Kullanici", foreign_keys=[kullanici_id])
+    kullanici: Mapped["Kullanici"] = relationship("Kullanici", foreign_keys=[kullanici_id], back_populates="kullanici_rolleri")
     rol: Mapped["Rol"] = relationship("Rol", back_populates="kullanici_rolleri")
 
 

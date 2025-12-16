@@ -85,6 +85,7 @@ class Kullanici(Taban):
     kullanici_rolleri: Mapped[List["KullaniciRol"]] = relationship(
         "KullaniciRol", 
         back_populates="kullanici",
+        foreign_keys="KullaniciRol.kullanici_id",
         cascade="all, delete-orphan"
     )
     

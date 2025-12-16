@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
+# Version: 0.1.0
+# Last Update: 2024-12-15
+# Module: spec_completion_automation
+# Description: Spec tamamlama otomatik commit ve versiyonlama scripti
+# Changelog:
+# - İlk versiyon: otomatik commit, versiyonlama ve branch yönetimi
+
 """
 Spec tamamlama otomatik commit ve versiyonlama scripti
 """
-import os
-import sys
-import subprocess
-from datetime import datetime
-import argparse
 
-def run_command(cmd, cwd=None):
+import argparse
+import subprocess
+import sys
+from datetime import datetime
+from typing import Optional
+
+def run_command(cmd: str, cwd: Optional[str] = None) -> Optional[str]:
     """Komut çalıştır ve sonucu döndür"""
     try:
         result = subprocess.run(
@@ -25,15 +33,15 @@ def run_command(cmd, cwd=None):
         print(f"Stderr: {e.stderr}")
         return None
 
-def get_current_version():
+def get_current_version() -> str:
     """Mevcut versiyonu al"""
     try:
-        with open('VERSION', 'r') as f:
+        with open('VERSION', 'r', encoding='utf-8') as f:
             return f.read().strip()
     except FileNotFoundError:
         return "0.1.0"
 
-def bump_version(version_type='minor'):
+def bump_version(version_type: str = 'minor') -> str:
     """Versiyon artır"""
     current = get_current_version()
     major, minor, patch = map(int, current.split('.'))
@@ -51,12 +59,13 @@ def bump_version(version_type='minor'):
     new_version = f"{major}.{minor}.{patch}"
     
     # VERSION dosyasını güncelle
-    with open('VERSION', 'w') as f:
+    with open('VERSION', 'w', encoding='utf-8') as f:
         f.write(new_version)
     
     return new_version
 
-def main():
+def main() -> None:
+    """Ana fonksiyon"""
     parser = argparse.ArgumentParser(description='Spec tamamlama otomatik commit')
     parser.add_argument('spec_name', help='Tamamlanan spec adı')
     parser.add_argument('--version-type', choices=['patch', 'minor', 'major'], 

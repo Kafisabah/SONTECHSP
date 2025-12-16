@@ -26,7 +26,7 @@ from sontechsp.uygulama.arayuz.taban_ui_bilesenleri import (
     IcerikAlaniYoneticisi,
     MesajYoneticisi
 )
-from sontechsp.uygulama.cekirdek.kayit import logger_al
+from sontechsp.uygulama.cekirdek.kayit import kayit_al
 from sontechsp.uygulama.cekirdek.oturum import oturum_baglamini_al
 
 
@@ -57,7 +57,8 @@ class TabanEkran(QWidget):
         super().__init__(parent)
         
         self.ekran_adi = ekran_adi
-        self.logger = logger_al(f"ekran.{ekran_adi}")
+        self.setWindowTitle(ekran_adi)  # Window title ayarla
+        self.logger = kayit_al(f"ekran.{ekran_adi}")
         self.oturum_baglami = oturum_baglamini_al()
         
         # Durum değişkenleri

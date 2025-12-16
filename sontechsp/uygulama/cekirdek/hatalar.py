@@ -1,5 +1,5 @@
 # Version: 0.1.0
-# Last Update: 2024-12-15
+# Last Update: 2024-12-16
 # Module: hatalar
 # Description: SONTECHSP hata yönetimi modülü
 # Changelog:
@@ -134,16 +134,23 @@ class DogrulamaHatasi(SontechHatasi):
     """
     
     def __init__(self, 
-                 kural_adi: str,
                  mesaj: str,
+                 kural_adi: str = None,
                  mevcut_deger: Any = None,
                  beklenen_deger: Any = None):
         
         # Türkçe mesaj oluştur
-        turkce_mesaj = f"'{kural_adi}' kuralı ihlal edildi: {mesaj}"
+        if kural_adi:
+            turkce_mesaj = f"'{kural_adi}' kuralı ihlal edildi: {mesaj}"
+            hata_kodu = f"DOGRULAMA_HATA_{kural_adi.upper()}"
+        else:
+            turkce_mesaj = mesaj
+            hata_kodu = "DOGRULAMA_HATA"
         
         # Ek bilgi hazırla
-        ek_bilgi = {'kural_adi': kural_adi}
+        ek_bilgi = {}
+        if kural_adi:
+            ek_bilgi['kural_adi'] = kural_adi
         if mevcut_deger is not None:
             ek_bilgi['mevcut_deger'] = str(mevcut_deger)
         if beklenen_deger is not None:
@@ -151,7 +158,7 @@ class DogrulamaHatasi(SontechHatasi):
         
         super().__init__(
             mesaj=turkce_mesaj,
-            hata_kodu=f"DOGRULAMA_HATA_{kural_adi.upper()}",
+            hata_kodu=hata_kodu,
             seviye=HataSeviyesi.ORTA,
             ek_bilgi=ek_bilgi
         )
@@ -284,6 +291,184 @@ class EntegrasyonHatasi(SontechHatasi):
             hata_kodu=f"ENTEGRASYON_HATA_{sistem_adi.upper()}",
             seviye=HataSeviyesi.YUKSEK,
             ek_bilgi=ek_bilgi
+        )
+
+
+class POSHatasi(SontechHatasi):
+    """
+    POS sistemi hataları
+    
+    Kullanım alanları:
+    - Barkod okuma hatası
+    - Stok yetersizliği
+    - Ödeme işlemi hatası
+    - Fiş yazdırma hatası
+    - Sepet işlemi hatası
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 islem_tipi: Optional[str] = None,
+                 hata_detayi: Optional[str] = None):
+        
+        # Türkçe mesaj oluştur
+        turkce_mesaj = f"POS hatası: {mesaj}"
+        
+        # Ek bilgi hazırla
+        ek_bilgi = {}
+        if islem_tipi:
+            ek_bilgi['islem_tipi'] = islem_tipi
+        if hata_detayi:
+            ek_bilgi['hata_detayi'] = hata_detayi
+        
+        super().__init__(
+            mesaj=turkce_mesaj,
+            hata_kodu="POS_HATA",
+            seviye=HataSeviyesi.ORTA,
+            ek_bilgi=ek_bilgi
+        )
+
+
+class BarkodHatasi(POSHatasi):
+    """
+    Barkod okuma ve doğrulama hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 barkod: Optional[str] = None):
+        
+        ek_bilgi = {}
+        if barkod:
+            ek_bilgi['barkod'] = barkod
+        
+        super().__init__(
+            mesaj=f"Barkod hatası: {mesaj}",
+            islem_tipi="barkod_okuma",
+            hata_detayi=str(ek_bilgi)
+        )
+
+
+class StokHatasi(POSHatasi):
+    """
+    Stok yetersizliği ve stok yönetimi hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 urun_id: Optional[int] = None,
+                 mevcut_stok: Optional[int] = None,
+                 talep_edilen: Optional[int] = None):
+        
+        ek_bilgi = {}
+        if urun_id:
+            ek_bilgi['urun_id'] = urun_id
+        if mevcut_stok is not None:
+            ek_bilgi['mevcut_stok'] = mevcut_stok
+        if talep_edilen is not None:
+            ek_bilgi['talep_edilen'] = talep_edilen
+        
+        super().__init__(
+            mesaj=f"Stok hatası: {mesaj}",
+            islem_tipi="stok_kontrolu",
+            hata_detayi=str(ek_bilgi)
+        )
+
+
+class OdemeHatasi(POSHatasi):
+    """
+    Ödeme işlemi hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 odeme_turu: Optional[str] = None,
+                 tutar: Optional[float] = None):
+        
+        ek_bilgi = {}
+        if odeme_turu:
+            ek_bilgi['odeme_turu'] = odeme_turu
+        if tutar is not None:
+            ek_bilgi['tutar'] = tutar
+        
+        super().__init__(
+            mesaj=f"Ödeme hatası: {mesaj}",
+            islem_tipi="odeme",
+            hata_detayi=str(ek_bilgi)
+        )
+
+
+class IadeHatasi(POSHatasi):
+    """
+    İade işlemi hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 satis_id: Optional[int] = None,
+                 iade_tutari: Optional[float] = None):
+        
+        ek_bilgi = {}
+        if satis_id:
+            ek_bilgi['satis_id'] = satis_id
+        if iade_tutari is not None:
+            ek_bilgi['iade_tutari'] = iade_tutari
+        
+        super().__init__(
+            mesaj=f"İade hatası: {mesaj}",
+            islem_tipi="iade",
+            hata_detayi=str(ek_bilgi)
+        )
+
+
+class NetworkHatasi(SontechHatasi):
+    """
+    Ağ bağlantısı hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 endpoint: Optional[str] = None,
+                 timeout: Optional[int] = None):
+        
+        # Türkçe mesaj oluştur
+        turkce_mesaj = f"Ağ bağlantısı hatası: {mesaj}"
+        
+        # Ek bilgi hazırla
+        ek_bilgi = {}
+        if endpoint:
+            ek_bilgi['endpoint'] = endpoint
+        if timeout is not None:
+            ek_bilgi['timeout'] = timeout
+        
+        super().__init__(
+            mesaj=turkce_mesaj,
+            hata_kodu="NETWORK_HATA",
+            seviye=HataSeviyesi.YUKSEK,
+            ek_bilgi=ek_bilgi
+        )
+
+
+class YazdirmaHatasi(POSHatasi):
+    """
+    Fiş yazdırma hataları
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 yazici_adi: Optional[str] = None,
+                 fis_no: Optional[str] = None):
+        
+        ek_bilgi = {}
+        if yazici_adi:
+            ek_bilgi['yazici_adi'] = yazici_adi
+        if fis_no:
+            ek_bilgi['fis_no'] = fis_no
+        
+        super().__init__(
+            mesaj=f"Yazdırma hatası: {mesaj}",
+            islem_tipi="yazdirma",
+            hata_detayi=str(ek_bilgi)
         )
 
 

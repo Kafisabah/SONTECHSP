@@ -13,7 +13,7 @@ Engine oluşturma ve yapılandırma işlemleri burada yapılır.
 """
 
 import logging
-from sqlalchemy import create_engine, Engine, event
+from sqlalchemy import create_engine, Engine, event, text
 from sqlalchemy.pool import StaticPool
 
 from ..cekirdek.ayarlar import ayar_al
@@ -98,7 +98,7 @@ def baglanti_test_et_yardimci(engine: Engine, veritabani_tipi: str) -> bool:
     """Veritabanı bağlantısını test et"""
     try:
         with engine.connect() as connection:
-            connection.execute("SELECT 1")
+            connection.execute(text("SELECT 1"))
             logger.info(f"{veritabani_tipi} bağlantı testi başarılı")
             return True
     except Exception as e:

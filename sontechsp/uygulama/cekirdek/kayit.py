@@ -353,3 +353,20 @@ def kayit_sistemi_al() -> KayitSistemi:
     if _kayit_sistemi is None:
         _kayit_sistemi = KayitSistemi()
     return _kayit_sistemi
+
+
+def kayit_al(isim: str = 'sontechsp') -> logging.Logger:
+    """
+    Logger instance'ı döndürür
+    
+    Args:
+        isim: Logger ismi
+        
+    Returns:
+        Logger instance'ı
+    """
+    # Kayıt sistemini başlat
+    kayit_sistemi_al()
+    
+    # Logger'ı döndür
+    return logging.getLogger(isim)
