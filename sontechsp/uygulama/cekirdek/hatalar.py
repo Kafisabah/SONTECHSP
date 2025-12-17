@@ -122,6 +122,109 @@ class AlanHatasi(SontechHatasi):
         )
 
 
+class IsKuraliHatasi(SontechHatasi):
+    """
+    İş kuralı hataları
+    
+    Kullanım alanları:
+    - İş mantığı ihlali
+    - Geçersiz işlem
+    - Durum geçiş hatası
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 kural_adi: Optional[str] = None):
+        
+        # Türkçe mesaj oluştur
+        if kural_adi:
+            turkce_mesaj = f"İş kuralı hatası '{kural_adi}': {mesaj}"
+            hata_kodu = f"IS_KURALI_HATA_{kural_adi.upper()}"
+        else:
+            turkce_mesaj = f"İş kuralı hatası: {mesaj}"
+            hata_kodu = "IS_KURALI_HATA"
+        
+        # Ek bilgi hazırla
+        ek_bilgi = {}
+        if kural_adi:
+            ek_bilgi['kural_adi'] = kural_adi
+        
+        super().__init__(
+            mesaj=turkce_mesaj,
+            hata_kodu=hata_kodu,
+            seviye=HataSeviyesi.ORTA,
+            ek_bilgi=ek_bilgi
+        )
+
+
+class VeritabaniHatasi(SontechHatasi):
+    """
+    Veritabanı işlem hataları (alternatif isim)
+    
+    Kullanım alanları:
+    - Bağlantı hatası
+    - SQL sorgu hatası
+    - Transaction hatası
+    - Constraint ihlali
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 sql_hata: Optional[str] = None,
+                 tablo_adi: Optional[str] = None):
+        
+        # Türkçe mesaj oluştur
+        turkce_mesaj = f"Veritabanı hatası: {mesaj}"
+        
+        # Ek bilgi hazırla
+        ek_bilgi = {}
+        if sql_hata:
+            ek_bilgi['sql_hata'] = sql_hata
+        if tablo_adi:
+            ek_bilgi['tablo_adi'] = tablo_adi
+        
+        super().__init__(
+            mesaj=turkce_mesaj,
+            hata_kodu="VERITABANI_HATA",
+            seviye=HataSeviyesi.YUKSEK,
+            ek_bilgi=ek_bilgi
+        )
+
+
+class VeriTabaniHatasi(SontechHatasi):
+    """
+    Veritabanı işlem hataları
+    
+    Kullanım alanları:
+    - Bağlantı hatası
+    - SQL sorgu hatası
+    - Transaction hatası
+    - Constraint ihlali
+    """
+    
+    def __init__(self, 
+                 mesaj: str,
+                 sql_hata: Optional[str] = None,
+                 tablo_adi: Optional[str] = None):
+        
+        # Türkçe mesaj oluştur
+        turkce_mesaj = f"Veritabanı hatası: {mesaj}"
+        
+        # Ek bilgi hazırla
+        ek_bilgi = {}
+        if sql_hata:
+            ek_bilgi['sql_hata'] = sql_hata
+        if tablo_adi:
+            ek_bilgi['tablo_adi'] = tablo_adi
+        
+        super().__init__(
+            mesaj=turkce_mesaj,
+            hata_kodu="VERITABANI_HATA",
+            seviye=HataSeviyesi.YUKSEK,
+            ek_bilgi=ek_bilgi
+        )
+
+
 class DogrulamaHatasi(SontechHatasi):
     """
     İş kuralı doğrulama hataları
@@ -164,38 +267,7 @@ class DogrulamaHatasi(SontechHatasi):
         )
 
 
-class VeritabaniHatasi(SontechHatasi):
-    """
-    Veritabanı işlem hataları
-    
-    Kullanım alanları:
-    - Bağlantı hatası
-    - SQL sorgu hatası
-    - Transaction hatası
-    - Migration hatası
-    """
-    
-    def __init__(self, 
-                 mesaj: str,
-                 sql_hata: Optional[str] = None,
-                 tablo_adi: Optional[str] = None):
-        
-        # Türkçe mesaj oluştur
-        turkce_mesaj = f"Veritabanı hatası: {mesaj}"
-        
-        # Ek bilgi hazırla
-        ek_bilgi = {}
-        if sql_hata:
-            ek_bilgi['sql_hata'] = sql_hata
-        if tablo_adi:
-            ek_bilgi['tablo_adi'] = tablo_adi
-        
-        super().__init__(
-            mesaj=turkce_mesaj,
-            hata_kodu="VERITABANI_HATA",
-            seviye=HataSeviyesi.YUKSEK,
-            ek_bilgi=ek_bilgi
-        )
+
 
 
 class MigrationHatasi(SontechHatasi):

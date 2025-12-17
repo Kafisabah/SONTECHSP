@@ -1,24 +1,18 @@
-# Version: 0.1.0
-# Last Update: 2024-12-15
+# Version: 0.2.0
+# Last Update: 2024-12-17
 # Module: eticaret.servisler
-# Description: E-ticaret modülü servis katmanı
+# Description: E-ticaret servis katmanı
 # Changelog:
 # - İlk oluşturma
+# - EticaretServisi eklendi
 
 """
-SONTECHSP E-ticaret Servis Katmanı
+E-ticaret servis katmanı
 
-Bu katman e-ticaret modülünün iş mantığını içerir:
-- Pazaryeri entegrasyon servisleri
-- E-ticaret sitesi bağlantı servisleri
-- Sipariş senkronizasyon servisleri
-- Ürün aktarım servisleri
-
-Katman kuralları:
-- UI katmanından çağrılır
-- Repository katmanını kullanır
-- Entegrasyon iş süreçlerini yönetir
-- Senkronizasyon kurallarını uygular
+Servis sınıfları:
+- EticaretServisi: Ana e-ticaret iş mantığı
 """
 
-__version__ = "0.1.0"
+from .eticaret_servisi import EticaretServisi
+
+__all__ = ["EticaretServisi"]

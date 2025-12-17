@@ -116,6 +116,25 @@ class VeriTabaniBaglanti:
         finally:
             session.close()
     
+    @contextmanager
+    def readonly_session(self) -> Generator[Session, None, None]:
+        """Salt okunur PostgreSQL session context manager"""
+        session_factory = self.postgresql_session_factory_olustur()
+        session = session_factory()
+        
+        try:
+            # Salt okunur modda autocommit kapalı, rollback yapılacak
+            yield session
+            # Salt okunur session'da commit yapılmaz
+            session.rollback()
+            logger.debug("Salt okunur session kapatıldı")
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Salt okunur session hatası: {e}")
+            raise
+        finally:
+            session.close()
+    
     def baglanti_test_et(self, veritabani_tipi: str = "postgresql") -> bool:
         """Veritabanı bağlantısını test et"""
         if veritabani_tipi == "postgresql":
@@ -156,6 +175,10 @@ def postgresql_session():
 def sqlite_session():
     """SQLite session kısayolu"""
     return veritabani_baglanti.sqlite_session()
+
+def get_readonly_session():
+    """Salt okunur session kısayolu"""
+    return veritabani_baglanti.readonly_session()
 
 def baglanti_test_et(veritabani_tipi: str = "postgresql") -> bool:
     """Bağlantı testi kısayolu"""

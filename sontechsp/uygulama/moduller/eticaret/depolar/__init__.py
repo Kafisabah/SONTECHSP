@@ -1,24 +1,20 @@
-# Version: 0.1.0
-# Last Update: 2024-12-15
+# Version: 0.2.0
+# Last Update: 2024-12-17
 # Module: eticaret.depolar
-# Description: E-ticaret modülü repository katmanı
+# Description: E-ticaret depolar modülü
 # Changelog:
 # - İlk oluşturma
+# - EticaretDeposu ve JobDeposu eklendi
 
 """
-SONTECHSP E-ticaret Repository Katmanı
+E-ticaret depolar modülü
 
-Bu katman e-ticaret modülünün veri erişim katmanını içerir:
-- Pazaryeri hesap repository'leri
-- E-ticaret sipariş repository'leri
-- Ürün aktarım repository'leri
-- Senkronizasyon log repository'leri
-
-Katman kuralları:
-- Servis katmanından çağrılır
-- Veritabanı erişimini yönetir
-- Entegrasyon verilerini yönetir
-- Senkronizasyon durumlarını takip eder
+Repository sınıfları:
+- EticaretDeposu: Mağaza hesapları ve siparişler
+- JobDeposu: Asenkron iş kuyruğu yönetimi
 """
 
-__version__ = "0.1.0"
+from .eticaret_deposu import EticaretDeposu
+from .job_deposu import JobDeposu
+
+__all__ = ["EticaretDeposu", "JobDeposu"]

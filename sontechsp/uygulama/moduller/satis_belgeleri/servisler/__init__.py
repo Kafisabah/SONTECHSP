@@ -1,9 +1,10 @@
-# Version: 0.1.0
-# Last Update: 2024-12-15
+# Version: 0.2.0
+# Last Update: 2024-12-16
 # Module: satis_belgeleri.servisler
 # Description: Satış belgeleri modülü servis katmanı
 # Changelog:
 # - İlk oluşturma
+# - NumaraServisi eklendi
 
 """
 SONTECHSP Satış Belgeleri Servis Katmanı
@@ -13,6 +14,7 @@ Bu katman satış belgeleri modülünün iş mantığını içerir:
 - İrsaliye servisleri
 - Fatura servisleri
 - Belge durum akış servisleri
+- Numara üretim servisi
 
 Katman kuralları:
 - UI katmanından çağrılır
@@ -21,4 +23,19 @@ Katman kuralları:
 - Durum geçişlerini kontrol eder
 """
 
-__version__ = "0.1.0"
+from .numara_servisi import NumaraServisi
+from .durum_akis_servisi import DurumAkisServisi
+from .dogrulama_servisi import DogrulamaServisi
+from .belge_servisi import BelgeServisi, SiparisBilgileriDTO, BelgeDTO
+from .sorgu_servisi import SorguServisi
+
+__version__ = "0.4.0"
+__all__ = [
+    'NumaraServisi',
+    'DurumAkisServisi',
+    'DogrulamaServisi',
+    'BelgeServisi',
+    'SiparisBilgileriDTO',
+    'BelgeDTO',
+    'SorguServisi'
+]

@@ -45,13 +45,14 @@ __all__ = [
     'Urun', 'UrunBarkod', 'StokBakiye', 'StokHareket',
     
     # CRM modelleri
-    'Musteri', 'SadakatPuan',
+    'Musteriler', 'SadakatPuanlari',
     
     # POS modelleri
     'PosSatis', 'PosSatisSatir', 'OdemeKayit',
     
     # Belge modelleri
-    'SatisBelge', 'SatisBelgeSatir',
+    'SatisBelgesi', 'BelgeSatiri', 'NumaraSayaci', 'BelgeDurumGecmisi',
+    'BelgeTuru', 'BelgeDurumu',
     
     # E-ticaret modelleri
     'EticaretHesap', 'EticaretSiparis',

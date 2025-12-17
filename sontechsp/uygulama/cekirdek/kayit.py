@@ -370,3 +370,6 @@ def kayit_al(isim: str = 'sontechsp') -> logging.Logger:
     
     # Logger'ı döndür
     return logging.getLogger(isim)
+
+# Global logger instance
+logger = kayit_al('sontechsp')

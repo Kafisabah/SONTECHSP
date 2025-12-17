@@ -96,15 +96,45 @@ SQLITE_PATH=data/pos_cache.db
 LOG_LEVEL=INFO
 ```
 
-### 5. İlk Kurulum
+### 5. İlk Kurulum ve Bootstrap
+
+SONTECHSP otomatik kurulum sistemi ile tüm hazırlık işlemleri tek komutla tamamlanır:
 
 ```bash
-# Veritabanı migration'larını çalıştırın
-python -m sontechsp.uygulama.kurulum.baslat
+# Otomatik kurulum ve yapılandırma
+python -m uygulama.kurulum.baslat
+
+# Bu komut otomatik olarak:
+# 1. Gerekli klasörleri oluşturur (veri, loglar, yedekler, raporlar)
+# 2. config.json ayar dosyasını hazırlar
+# 3. PostgreSQL bağlantısını test eder
+# 4. Alembic migration'larını çalıştırır (uygulama/veritabani/gocler dizininden)
+# 5. Varsayılan admin kullanıcısını oluşturur (admin/admin123)
 
 # Uygulamayı başlatın
-python -m sontechsp.uygulama.ana
+python -m uygulama.ana
 ```
+
+#### Yapılandırma Dosyası (config.json)
+
+İlk kurulum sonrası proje kök dizininde `config.json` dosyası otomatik oluşturulur:
+
+```json
+{
+  "veritabani_url": "postgresql://kullanici:sifre@localhost:5432/sontechsp",
+  "ortam": "dev",
+  "log_seviyesi": "INFO"
+}
+```
+
+**Kurulum Detayları:**
+- **Klasör Yapısı**: Sistem otomatik olarak veri/, loglar/, yedekler/, raporlar/ klasörlerini oluşturur
+- **İdempotent İşlemler**: Kurulum birden fazla kez çalıştırılabilir, mevcut ayarlar korunur
+- **Hata Yönetimi**: Her adımda detaylı hata mesajları ve çözüm önerileri
+- **Migration Yönetimi**: Alembic programatik olarak çalıştırılır, manuel komut gerekmez
+- **Güvenlik**: Şifreler bcrypt ile hashlenir
+
+**Önemli**: Güvenlik için varsayılan admin şifresini (admin123) ilk girişten sonra değiştirin!
 
 ## Geliştirme Ortamı Kurulumu
 
@@ -218,14 +248,18 @@ python -m sontechsp.uygulama.ana --test-db
 ### Kurulum Yardımcısı
 
 ```bash
-# İlk kurulum sihirbazı
-python -m sontechsp.uygulama.kurulum.baslat
+# İlk kurulum sihirbazı (otomatik bootstrap)
+python -m uygulama.kurulum.baslat
 
-# Veritabanı sıfırlama
-python -m sontechsp.uygulama.kurulum.baslat --reset
+# Kurulum adımları:
+# 1. Klasör oluşturma (idempotent)
+# 2. Ayar dosyası hazırlama (mevcut korunur)
+# 3. PostgreSQL bağlantı testi
+# 4. Alembic migration çalıştırma
+# 5. Admin kullanıcı oluşturma (mevcut korunur)
 
-# Migration çalıştırma
-python -m sontechsp.uygulama.kurulum.baslat --migrate-only
+# Manuel migration çalıştırma
+python -c "from uygulama.kurulum.veritabani_kontrol import gocleri_calistir; gocleri_calistir('.')"
 ```
 
 ## Proje Yapısı

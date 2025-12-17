@@ -40,9 +40,12 @@ dependencies = [
     "fastapi>=0.104.0",
     "uvicorn[standard]>=0.24.0",
     
+    # Security (Kurulum bootstrap için)
+    "passlib[bcrypt]>=1.7.4",  # Şifre hashleme
+    
     # Utility Libraries
     "pydantic>=2.4.0",
-    "python-dotenv>=1.0.0",
+    "python-dotenv>=1.0.0",  # Yapılandırma yönetimi
     "click>=8.1.0",
     "rich>=13.6.0",  # Console output formatting
     

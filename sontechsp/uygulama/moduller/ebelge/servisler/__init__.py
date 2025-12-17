@@ -23,4 +23,7 @@ Katman kuralları:
 - Kuyruk ve retry mantığını uygular
 """
 
+from .ebelge_servisi import EBelgeServisi
+
 __version__ = "0.1.0"
+__all__ = ["EBelgeServisi"]

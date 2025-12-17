@@ -1,0 +1,76 @@
+# SONTECHSP Kod Kalitesi ve Standardizasyon Konfigürasyonu
+# Bu dosya kod kalitesi araçlarının davranışını kontrol eder
+
+# Dosya kuralları
+dosya_kurallari:
+  max_satir_sayisi: 120
+  hariç_tutulan_klasorler:
+    - __pycache__
+    - .git
+    - venv
+    - env
+    - .hypothesis
+    - htmlcov
+    - .pytest_cache
+  hariç_tutulan_dosyalar:
+    - __init__.py
+  yorum_satirlari_dahil: false
+
+# Fonksiyon kuralları
+fonksiyon_kurallari:
+  max_satir_sayisi: 25
+  karmasiklik_esigi: 10
+  hariç_tutulan_fonksiyonlar:
+    - __init__
+    - __str__
+    - __repr__
+    - __eq__
+    - __hash__
+
+# Mimari kuralları
+mimari_kurallari:
+  katman_sirasi:
+    - ui
+    - servisler
+    - depolar
+    - veritabani
+  yasak_importlar:
+    ui:
+      - depolar
+      - veritabani
+    servisler:
+      - ui
+    depolar:
+      - ui
+      - servisler
+  dependency_injection_zorunlu: true
+
+# Kod tekrarı kuralları
+kod_tekrari_kurallari:
+  benzerlik_esigi: 0.8
+  minimum_satir_sayisi: 5
+  ortak_modul_klasoru: ortak
+
+# Dosya başlık kuralları
+baslik_kurallari:
+  zorunlu_alanlar:
+    - Version
+    - Last Update
+    - Module
+    - Description
+  tarih_formati: '%Y-%m-%d'
+  surum_formati: X.Y.Z
+
+# Test kuralları
+test_kurallari:
+  test_klasoru: tests
+  minimum_coverage: 80.0
+  property_test_iterasyon: 100
+  test_timeout: 300
+
+# Güvenlik kuralları
+guvenlik_kurallari:
+  backup_klasoru: .kod-kalitesi-backup
+  max_backup_sayisi: 10
+  otomatik_backup: true
+  geri_alma_timeout: 60

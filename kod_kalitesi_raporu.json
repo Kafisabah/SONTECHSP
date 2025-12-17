@@ -1,0 +1,3812 @@
+{
+  "analiz_tarihi": "2025-12-18T00:00:47.674179",
+  "toplam_dosya": 254,
+  "buyuk_dosya_sayisi": 106,
+  "buyuk_fonksiyon_sayisi": 544,
+  "mimari_ihlal_sayisi": 0,
+  "buyuk_dosyalar": [
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "satir_sayisi": 805,
+      "limit_asimi": 685
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "satir_sayisi": 704,
+      "limit_asimi": 584
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "satir_sayisi": 696,
+      "limit_asimi": 576
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "satir_sayisi": 644,
+      "limit_asimi": 524
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "satir_sayisi": 578,
+      "limit_asimi": 458
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "satir_sayisi": 574,
+      "limit_asimi": 454
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "satir_sayisi": 531,
+      "limit_asimi": 411
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "satir_sayisi": 523,
+      "limit_asimi": 403
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "satir_sayisi": 518,
+      "limit_asimi": 398
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\hatalar.py",
+      "satir_sayisi": 501,
+      "limit_asimi": 381
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "satir_sayisi": 501,
+      "limit_asimi": 381
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "satir_sayisi": 495,
+      "limit_asimi": 375
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "satir_sayisi": 433,
+      "limit_asimi": 313
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "satir_sayisi": 407,
+      "limit_asimi": 287
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "satir_sayisi": 388,
+      "limit_asimi": 268
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "satir_sayisi": 378,
+      "limit_asimi": 258
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "satir_sayisi": 376,
+      "limit_asimi": 256
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "satir_sayisi": 375,
+      "limit_asimi": 255
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "satir_sayisi": 374,
+      "limit_asimi": 254
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "satir_sayisi": 367,
+      "limit_asimi": 247
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_entegrasyon_service.py",
+      "satir_sayisi": 363,
+      "limit_asimi": 243
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "satir_sayisi": 360,
+      "limit_asimi": 240
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "satir_sayisi": 358,
+      "limit_asimi": 238
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "satir_sayisi": 344,
+      "limit_asimi": 224
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "satir_sayisi": 344,
+      "limit_asimi": 224
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "satir_sayisi": 342,
+      "limit_asimi": 222
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "satir_sayisi": 338,
+      "limit_asimi": 218
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\servisler.py",
+      "satir_sayisi": 338,
+      "limit_asimi": 218
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "satir_sayisi": 336,
+      "limit_asimi": 216
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "satir_sayisi": 332,
+      "limit_asimi": 212
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "satir_sayisi": 327,
+      "limit_asimi": 207
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "satir_sayisi": 312,
+      "limit_asimi": 192
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "satir_sayisi": 308,
+      "limit_asimi": 188
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "satir_sayisi": 304,
+      "limit_asimi": 184
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "satir_sayisi": 303,
+      "limit_asimi": 183
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "satir_sayisi": 299,
+      "limit_asimi": 179
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "satir_sayisi": 298,
+      "limit_asimi": 178
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "satir_sayisi": 292,
+      "limit_asimi": 172
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "satir_sayisi": 287,
+      "limit_asimi": 167
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "satir_sayisi": 287,
+      "limit_asimi": 167
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\modeller\\stok.py",
+      "satir_sayisi": 283,
+      "limit_asimi": 163
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\odeme_service.py",
+      "satir_sayisi": 279,
+      "limit_asimi": 159
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "satir_sayisi": 278,
+      "limit_asimi": 158
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\kayit.py",
+      "satir_sayisi": 277,
+      "limit_asimi": 157
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\yetki.py",
+      "satir_sayisi": 276,
+      "limit_asimi": 156
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "satir_sayisi": 276,
+      "limit_asimi": 156
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\arayuzler.py",
+      "satir_sayisi": 272,
+      "limit_asimi": 152
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\kurulum_yoneticisi.py",
+      "satir_sayisi": 269,
+      "limit_asimi": 149
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "satir_sayisi": 267,
+      "limit_asimi": 147
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "satir_sayisi": 265,
+      "limit_asimi": 145
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\offline_kuyruk.py",
+      "satir_sayisi": 264,
+      "limit_asimi": 144
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\satis.py",
+      "satir_sayisi": 263,
+      "limit_asimi": 143
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_transfer_service.py",
+      "satir_sayisi": 263,
+      "limit_asimi": 143
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\modeller\\belgeler.py",
+      "satir_sayisi": 261,
+      "limit_asimi": 141
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "satir_sayisi": 253,
+      "limit_asimi": 133
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "satir_sayisi": 252,
+      "limit_asimi": 132
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\iade.py",
+      "satir_sayisi": 251,
+      "limit_asimi": 131
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "satir_sayisi": 250,
+      "limit_asimi": 130
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "satir_sayisi": 250,
+      "limit_asimi": 130
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "satir_sayisi": 248,
+      "limit_asimi": 128
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "satir_sayisi": 244,
+      "limit_asimi": 124
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "satir_sayisi": 241,
+      "limit_asimi": 121
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\cli_arayuzu.py",
+      "satir_sayisi": 240,
+      "limit_asimi": 120
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\sepet.py",
+      "satir_sayisi": 236,
+      "limit_asimi": 116
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring_orkestratori.py",
+      "satir_sayisi": 233,
+      "limit_asimi": 113
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "satir_sayisi": 232,
+      "limit_asimi": 112
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "satir_sayisi": 221,
+      "limit_asimi": 101
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\belge_deposu.py",
+      "satir_sayisi": 214,
+      "limit_asimi": 94
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\ayarlar.py",
+      "satir_sayisi": 211,
+      "limit_asimi": 91
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\sorgular.py",
+      "satir_sayisi": 210,
+      "limit_asimi": 90
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\kritik_stok_service.py",
+      "satir_sayisi": 208,
+      "limit_asimi": 88
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\numara_servisi.py",
+      "satir_sayisi": 204,
+      "limit_asimi": 84
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\admin_olusturucu.py",
+      "satir_sayisi": 202,
+      "limit_asimi": 82
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ana_pencere.py",
+      "satir_sayisi": 197,
+      "limit_asimi": 77
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\veritabani_kontrol.py",
+      "satir_sayisi": 197,
+      "limit_asimi": 77
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\depolar.py",
+      "satir_sayisi": 194,
+      "limit_asimi": 74
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "satir_sayisi": 191,
+      "limit_asimi": 71
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_sayim_service.py",
+      "satir_sayisi": 189,
+      "limit_asimi": 69
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar.py",
+      "satir_sayisi": 188,
+      "limit_asimi": 68
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "satir_sayisi": 186,
+      "limit_asimi": 66
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\modeller\\satis_belgesi.py",
+      "satir_sayisi": 183,
+      "limit_asimi": 63
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241215_1200_001_ilk_migration.py",
+      "satir_sayisi": 181,
+      "limit_asimi": 61
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\import_yapisi_analizoru.py",
+      "satir_sayisi": 179,
+      "limit_asimi": 59
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\servisler\\taban_servis.py",
+      "satir_sayisi": 175,
+      "limit_asimi": 55
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\belge_satir_deposu.py",
+      "satir_sayisi": 174,
+      "limit_asimi": 54
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\disari_aktarim.py",
+      "satir_sayisi": 168,
+      "limit_asimi": 48
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\konfigürasyon.py",
+      "satir_sayisi": 166,
+      "limit_asimi": 46
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\yardimcilar.py",
+      "satir_sayisi": 166,
+      "limit_asimi": 46
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\sifreleme.py",
+      "satir_sayisi": 165,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\urun_repository.py",
+      "satir_sayisi": 165,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_bakiye_repository.py",
+      "satir_sayisi": 164,
+      "limit_asimi": 44
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\gosterge_paneli.py",
+      "satir_sayisi": 161,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\ayar_olusturucu.py",
+      "satir_sayisi": 161,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241216_1400_002_stok_tablolari.py",
+      "satir_sayisi": 157,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\liste_form_ekranlari.py",
+      "satir_sayisi": 151,
+      "limit_asimi": 31
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\baglanti.py",
+      "satir_sayisi": 148,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\__init__.py",
+      "satir_sayisi": 145,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\servisler.py",
+      "satir_sayisi": 141,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\servisler\\crm_servisler.py",
+      "satir_sayisi": 141,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\numara_sayac_deposu.py",
+      "satir_sayisi": 136,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_hareket_service.py",
+      "satir_sayisi": 136,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\depolar\\ebelge_deposu.py",
+      "satir_sayisi": 133,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\oturum.py",
+      "satir_sayisi": 130,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\fonksiyon_boyut_analizoru.py",
+      "satir_sayisi": 130,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\servisler\\ebelge_servisi.py",
+      "satir_sayisi": 128,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\servis_fabrikasi.py",
+      "satir_sayisi": 121,
+      "limit_asimi": 1
+    }
+  ],
+  "buyuk_fonksiyonlar": [
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241215_1200_001_ilk_migration.py",
+      "fonksiyon": "upgrade",
+      "satir_sayisi": 163,
+      "limit_asimi": 138
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_transfer_service.py",
+      "fonksiyon": "transfer_yap",
+      "satir_sayisi": 143,
+      "limit_asimi": 118
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241216_1400_002_stok_tablolari.py",
+      "fonksiyon": "upgrade",
+      "satir_sayisi": 134,
+      "limit_asimi": 109
+    },
+    {
+      "dosya": ".\\kod_kalitesi_analiz.py",
+      "fonksiyon": "kod_kalitesi_analizi",
+      "satir_sayisi": 118,
+      "limit_asimi": 93
+    },
+    {
+      "dosya": ".\\uygulama\\veritabani\\gocler\\versions\\20251217_065726_kargo_etiket_takip.py",
+      "fonksiyon": "upgrade",
+      "satir_sayisi": 117,
+      "limit_asimi": 92
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "rapor_olusturma_grubu_olustur",
+      "satir_sayisi": 113,
+      "limit_asimi": 88
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "islemler_grubu_olustur",
+      "satir_sayisi": 110,
+      "limit_asimi": 85
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "kargo_islemleri_grubu_olustur",
+      "satir_sayisi": 110,
+      "limit_asimi": 85
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "filtre_grubu_olustur",
+      "satir_sayisi": 106,
+      "limit_asimi": 81
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "alt_butonlar_olustur",
+      "satir_sayisi": 105,
+      "limit_asimi": 80
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "ust_butonlar_olustur",
+      "satir_sayisi": 103,
+      "limit_asimi": 78
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "ust_butonlar_olustur",
+      "satir_sayisi": 103,
+      "limit_asimi": 78
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\servisler.py",
+      "fonksiyon": "etiket_olustur",
+      "satir_sayisi": 99,
+      "limit_asimi": 74
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "fonksiyon": "irsaliye_olustur",
+      "satir_sayisi": 97,
+      "limit_asimi": 72
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "kuyruk_senkronize_et",
+      "satir_sayisi": 96,
+      "limit_asimi": 71
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\odeme_service.py",
+      "fonksiyon": "parcali_odeme_yap",
+      "satir_sayisi": 95,
+      "limit_asimi": 70
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\servisler.py",
+      "fonksiyon": "bekleyen_etiketleri_isle",
+      "satir_sayisi": 94,
+      "limit_asimi": 69
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_satiri_ekle",
+      "satir_sayisi": 93,
+      "limit_asimi": 68
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "_satis_fisi_formatla",
+      "satir_sayisi": 92,
+      "limit_asimi": 67
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "senkronizasyon_grubu_olustur",
+      "satir_sayisi": 92,
+      "limit_asimi": 67
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "hizli_islemler_grubu_olustur",
+      "satir_sayisi": 92,
+      "limit_asimi": 67
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "rapor_uret",
+      "satir_sayisi": 91,
+      "limit_asimi": 66
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_entegrasyon_service.py",
+      "fonksiyon": "pos_satisi_isle",
+      "satir_sayisi": 89,
+      "limit_asimi": 64
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "filtreler_grubu_olustur",
+      "satir_sayisi": 88,
+      "limit_asimi": 63
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\odeme_service.py",
+      "fonksiyon": "tek_odeme_yap",
+      "satir_sayisi": 86,
+      "limit_asimi": 61
+    },
+    {
+      "dosya": ".\\scripts\\spec-tamamlandi.py",
+      "fonksiyon": "main",
+      "satir_sayisi": 85,
+      "limit_asimi": 60
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "fonksiyon": "rezervasyon_yap",
+      "satir_sayisi": 83,
+      "limit_asimi": 58
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\servisler.py",
+      "fonksiyon": "durum_sorgula",
+      "satir_sayisi": 83,
+      "limit_asimi": 58
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "_yapilandirma_dosyasi_olustur",
+      "satir_sayisi": 82,
+      "limit_asimi": 57
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "fonksiyon": "hata_kaydet",
+      "satir_sayisi": 82,
+      "limit_asimi": 57
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_olustur",
+      "satir_sayisi": 81,
+      "limit_asimi": 56
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_listesi_getir",
+      "satir_sayisi": 81,
+      "limit_asimi": 56
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_satiri_ekle",
+      "satir_sayisi": 80,
+      "limit_asimi": 55
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "satis_iptal_et",
+      "satir_sayisi": 80,
+      "limit_asimi": 55
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "backup_olustur",
+      "satir_sayisi": 78,
+      "limit_asimi": 53
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241217_1600_004_eticaret_altyapi.py",
+      "fonksiyon": "upgrade",
+      "satir_sayisi": 78,
+      "limit_asimi": 53
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "tarih_araligi_grubu_olustur",
+      "satir_sayisi": 78,
+      "limit_asimi": 53
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "tum_dosyalari_standardize_et",
+      "satir_sayisi": 78,
+      "limit_asimi": 53
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "audit_raporu_olustur",
+      "satir_sayisi": 77,
+      "limit_asimi": 52
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_kalemi_ekle",
+      "satir_sayisi": 77,
+      "limit_asimi": 52
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "fonksiyon": "rapor_uret",
+      "satir_sayisi": 76,
+      "limit_asimi": 51
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "barkod_ekle",
+      "satir_sayisi": 75,
+      "limit_asimi": 50
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_listesi_getir",
+      "satir_sayisi": 74,
+      "limit_asimi": 49
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "islem_kuyruga_ekle",
+      "satir_sayisi": 74,
+      "limit_asimi": 49
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_sayim_service.py",
+      "fonksiyon": "sayim_tamamla",
+      "satir_sayisi": 74,
+      "limit_asimi": 49
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "filtre_grubu_olustur",
+      "satir_sayisi": 74,
+      "limit_asimi": 49
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "hizli_islemler_grubu_olustur",
+      "satir_sayisi": 74,
+      "limit_asimi": 49
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "stok_rezervasyon_serbest_birak",
+      "satir_sayisi": 71,
+      "limit_asimi": 46
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_entegrasyon_service.py",
+      "fonksiyon": "eticaret_guncelle",
+      "satir_sayisi": 71,
+      "limit_asimi": 46
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "_iade_fisi_formatla",
+      "satir_sayisi": 70,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "fonksiyon": "_siparisten_fatura_olustur",
+      "satir_sayisi": 70,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\numara_servisi.py",
+      "fonksiyon": "numara_uret",
+      "satir_sayisi": 70,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\admin_olusturucu.py",
+      "fonksiyon": "admin_bilgilerini_guncelle",
+      "satir_sayisi": 70,
+      "limit_asimi": 45
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\kurulum_yoneticisi.py",
+      "fonksiyon": "_vscode_entegrasyonu_olustur",
+      "satir_sayisi": 69,
+      "limit_asimi": 44
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_olustur",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_getir",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_tamamla",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "durum_guncelle",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "rol_yetki_iliskilerini_kur",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "baslik_guncelle",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "_baslik_bilgisini_cikart",
+      "satir_sayisi": 68,
+      "limit_asimi": 43
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar.py",
+      "fonksiyon": "musteri_guncelle",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "fonksiyon": "musteri_guncelle",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_getir",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_baslat",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "durum_bilgisi_grubu_olustur",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "tasiyici_secimi_grubu_olustur",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "durum_bilgisi_grubu_olustur",
+      "satir_sayisi": 67,
+      "limit_asimi": 42
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "tam_refactoring_yap",
+      "satir_sayisi": 66,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\kritik_stok_service.py",
+      "fonksiyon": "kritik_stok_listesi",
+      "satir_sayisi": 66,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_entegrasyon_service.py",
+      "fonksiyon": "gercek_zamanli_stok_durumu_getir",
+      "satir_sayisi": 66,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\veritabani_kontrol.py",
+      "fonksiyon": "baglanti_test_et",
+      "satir_sayisi": 66,
+      "limit_asimi": 41
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\sorgular.py",
+      "fonksiyon": "satis_ozeti",
+      "satir_sayisi": 65,
+      "limit_asimi": 40
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "fonksiyon": "siparis_olustur",
+      "satir_sayisi": 65,
+      "limit_asimi": 40
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "ilk_calistirma_hazirla",
+      "satir_sayisi": 65,
+      "limit_asimi": 40
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "siparis_kaydet",
+      "satir_sayisi": 64,
+      "limit_asimi": 39
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "odeme_ekle",
+      "satir_sayisi": 64,
+      "limit_asimi": 39
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_transfer_service.py",
+      "fonksiyon": "transfer_iptal",
+      "satir_sayisi": 64,
+      "limit_asimi": 39
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\veritabani_kontrol.py",
+      "fonksiyon": "gocleri_calistir",
+      "satir_sayisi": 64,
+      "limit_asimi": 39
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "fonksiyon": "fiyat_guncellemelerini_dogrula",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "fonksiyon": "siparis_dto_dogrula",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\sorgular.py",
+      "fonksiyon": "en_cok_satan_urunler",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "islem_gecmisi_sekmesi_olustur",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "takip_gecmisi_sekmesi_olustur",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "odeme_butonlari_olustur",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "kurulum_durumu_raporu",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "tam_refactoring_yap",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "_fonksiyon_grubu_belirle",
+      "satir_sayisi": 63,
+      "limit_asimi": 38
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "_stok_gonder_isle",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "_fiyat_gonder_isle",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "fonksiyon": "job_durum_guncelle",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "siparis_senkronize_et",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruga_ekle",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\sorgular.py",
+      "fonksiyon": "kritik_stok_listesi",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "fonksiyon": "en_cok_satan_al",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "fonksiyon": "karlilik_al",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "fonksiyon": "fonksiyonel_gruplari_tespit_et",
+      "satir_sayisi": 62,
+      "limit_asimi": 37
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "gunluk_satis_ozeti",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_tutari_hesapla",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_dusur",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "fonksiyon": "kritik_stok_al",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_transfer_service.py",
+      "fonksiyon": "transfer_gecmisi",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "kargo_tablosunu_guncelle",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "rapor_turu_grubu_olustur",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\admin_olusturucu.py",
+      "fonksiyon": "admin_olustur",
+      "satir_sayisi": 61,
+      "limit_asimi": 36
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "siparis_durum_guncelle",
+      "satir_sayisi": 60,
+      "limit_asimi": 35
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "islem_butonlari_olustur",
+      "satir_sayisi": 60,
+      "limit_asimi": 35
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "bekleyen_joblari_isle",
+      "satir_sayisi": 59,
+      "limit_asimi": 34
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "_siparis_cek_isle",
+      "satir_sayisi": 59,
+      "limit_asimi": 34
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\disari_aktarim.py",
+      "fonksiyon": "csv_disari_aktar",
+      "satir_sayisi": 59,
+      "limit_asimi": 34
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "fonksiyon": "satis_ozeti_al",
+      "satir_sayisi": 59,
+      "limit_asimi": 34
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ana_pencere.py",
+      "fonksiyon": "ekranlari_yukle",
+      "satir_sayisi": 59,
+      "limit_asimi": 34
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_istatistikleri",
+      "satir_sayisi": 58,
+      "limit_asimi": 33
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_olustur",
+      "satir_sayisi": 58,
+      "limit_asimi": 33
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_getir",
+      "satir_sayisi": 58,
+      "limit_asimi": 33
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "veritabani_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 58,
+      "limit_asimi": 33
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 58,
+      "limit_asimi": 33
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "performans_raporu",
+      "satir_sayisi": 57,
+      "limit_asimi": 32
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_rezerve_et",
+      "satir_sayisi": 56,
+      "limit_asimi": 31
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "filtre_grubu_olustur",
+      "satir_sayisi": 56,
+      "limit_asimi": 31
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "fonksiyon": "stok_guncellemelerini_dogrula",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "fonksiyon": "job_istatistikleri",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "sepet_ile_satis_getir",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\odeme_service.py",
+      "fonksiyon": "odeme_tutari_kontrol",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "fonksiyon": "_odeme_ekle",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "fonksiyon": "rezervasyon_kullan",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "varsayilan_firma_magaza_olustur",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "kargo_ust_butonlar_olustur",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "arama_grubu_olustur",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "arama_grubu_olustur",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "referanslari_guncelle",
+      "satir_sayisi": 55,
+      "limit_asimi": 30
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "sistem_yetkilerini_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ana_pencere.py",
+      "fonksiyon": "sol_menu_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "durum_bilgisi_grubu_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "durum_bilgisi_grubu_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\gosterge_paneli.py",
+      "fonksiyon": "hizli_erisim_butonlari_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "durum_bilgisi_grubu_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "yedek_geri_yukle",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "fonksiyon": "_grup_icin_dosya_olustur",
+      "satir_sayisi": 54,
+      "limit_asimi": 29
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\entegrasyon_kancalari.py",
+      "fonksiyon": "pos_satis_tamamlandi",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\entegrasyon_kancalari.py",
+      "fonksiyon": "satis_belgesi_olustu",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "orijinal_satis_dogrula",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "fonksiyon": "belge_sil",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "temel_verileri_yukle",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "magaza_secimi_grubu_olustur",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "_basit_pep8_kontrolu",
+      "satir_sayisi": 53,
+      "limit_asimi": 28
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\cli_arayuzu.py",
+      "fonksiyon": "_refactoring_islemlerini_yap",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "main",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "fonksiyon": "puan_bakiyesi_getir",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "_durum_guncelle_isle",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "fonksiyon": "job_kuyrugu_sagligi",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "alt_ozet_olustur",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\klasorler.py",
+      "fonksiyon": "klasorleri_olustur",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "_importlari_sirala",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "api_bilgisi_cikart",
+      "satir_sayisi": 52,
+      "limit_asimi": 27
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "islem_bitir",
+      "satir_sayisi": 51,
+      "limit_asimi": 26
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "rapor_tablosunu_guncelle",
+      "satir_sayisi": 51,
+      "limit_asimi": 26
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "baslik_ekle",
+      "satir_sayisi": 51,
+      "limit_asimi": 26
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_bagimliliklari_kontrol_et",
+      "satir_sayisi": 51,
+      "limit_asimi": 26
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "geri_al",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\servisler\\ebelge_servisi.py",
+      "fonksiyon": "bekleyenleri_gonder",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "_job_isle",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_odeme_ekle",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "network_durumu_kontrol",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_iade_onayla",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\numara_servisi.py",
+      "fonksiyon": "_sayac_al_veya_olustur",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_hareket_service.py",
+      "fonksiyon": "_hareket_kaydet_ve_bakiye_guncelle",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "fonksiyon": "fonksiyonu_bol",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "_fonksiyon_tanimini_kaldir",
+      "satir_sayisi": 50,
+      "limit_asimi": 25
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\disari_aktarim.py",
+      "fonksiyon": "disari_aktar",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_bakiye_repository.py",
+      "fonksiyon": "rezervasyon_yap",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "bekleyen_ust_butonlar_olustur",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "gonderilen_ust_butonlar_olustur",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "hatali_ust_butonlar_olustur",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "kurulum_durumunu_kontrol_et",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "modul_tutarliligini_kontrol_et",
+      "satir_sayisi": 49,
+      "limit_asimi": 24
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "fonksiyon": "varsayilan_ekran_ekle",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "magaza_hesabi_ekle",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_durum_guncelle",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\kritik_stok_service.py",
+      "fonksiyon": "uyari_olustur",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_sayim_service.py",
+      "fonksiyon": "sayim_baslat",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "pos_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\ayar_olusturucu.py",
+      "fonksiyon": "ayar_dosyasi_olustur",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "isimlendirme_kurallari_uygula",
+      "satir_sayisi": 48,
+      "limit_asimi": 23
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar.py",
+      "fonksiyon": "musteri_olustur",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "fonksiyon": "musteri_olustur",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_satis_kalemlerini_yukle",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "fonksiyon": "_satisi_tamamla",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\disari_aktarim.py",
+      "fonksiyon": "pdf_disari_aktar",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\urun_repository.py",
+      "fonksiyon": "guncelle",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "genel_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\ayar_olusturucu.py",
+      "fonksiyon": "ayarlari_yukle",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "_parse_flake8_satir",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "dosya_basligini_analiz_et",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\fonksiyon_boyut_analizoru.py",
+      "fonksiyon": "fonksiyon_satirlarini_say",
+      "satir_sayisi": 47,
+      "limit_asimi": 22
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "fonksiyon": "platform_spesifik_dogrula",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "fonksiyon": "hata_istatistikleri",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "magaza_hesabi_olustur",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_satiri_guncelle",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_satiri_guncelle",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_bilgisi_getir",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "indirim_uygula",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_kontrol",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "fonksiyon": "_odeme_girisi_olustur",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\sorgular.py",
+      "fonksiyon": "karlilik_ozeti",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_hareket_service.py",
+      "fonksiyon": "stok_cikisi",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241217_1700_005_ebelge_outbox.py",
+      "fonksiyon": "upgrade",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "ayar_kurulumunu_yap",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\veritabani_kontrol.py",
+      "fonksiyon": "migration_durumunu_kontrol_et",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "ortak_modul_olustur",
+      "satir_sayisi": 46,
+      "limit_asimi": 21
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "magaza_hesabi_guncelle",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_durum_guncelle",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "iptal_nedeni_sorgula",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "belge_iptal_et",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "gonderilen_tablosunu_guncelle",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "dosya_kontrolu",
+      "satir_sayisi": 45,
+      "limit_asimi": 20
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_plani_uygula",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\sifreleme.py",
+      "fonksiyon": "sifreyi_coz",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "islem_izle",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\offline_kuyruk.py",
+      "fonksiyon": "offline_kuyruk_validasyon",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "stok_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "kargo_listesi_sekmesi_olustur",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\import_yapisi_analizoru.py",
+      "fonksiyon": "_ihlal_kontrol_et",
+      "satir_sayisi": 44,
+      "limit_asimi": 19
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\ayarlar.py",
+      "fonksiyon": "ornek_dosya_olustur",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\cli_arayuzu.py",
+      "fonksiyon": "ana_cli",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "kod_tabanini_analiz_et",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "siparis_listele",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "fonksiyon": "job_listele",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "islem_istatistikleri",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "gunluk_rapor",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_deneme_artir",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "fis_onizleme",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "fis_kaydet",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\raporlar\\servisler\\rapor_servisi.py",
+      "fonksiyon": "disari_aktar",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "siparis_ust_butonlar_olustur",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "fonksiyon": "_basit_pep8_kontrolu",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\dosya_boyut_analizoru.py",
+      "fonksiyon": "yorum_satirlarini_filtrele",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "dosyayi_grupla",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "public_api_korunuyor_mu",
+      "satir_sayisi": 43,
+      "limit_asimi": 18
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "temizlik_yap",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\satis.py",
+      "fonksiyon": "satis_validasyon",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\sepet.py",
+      "fonksiyon": "sepet_satiri_validasyon",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_iptal_et",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "sepet_iptal_edilebilir_mi",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "urun_adedi_degistir",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_artir",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\numara_servisi.py",
+      "fonksiyon": "ay_degisimi_kontrol_et",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_bakiye_repository.py",
+      "fonksiyon": "bakiye_guncelle",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\urun_repository.py",
+      "fonksiyon": "ekle",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "fonksiyon": "migration_durumu",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "siparis_listesi_sekmesi_olustur",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\servisler.py",
+      "fonksiyon": "_dto_dogrula",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "yedek_al",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "fonksiyon": "pep8_kontrolu",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\dosya_boyut_analizoru.py",
+      "fonksiyon": "buyuk_dosyalari_tespit_et",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "fonksiyon": "yardimci_fonksiyon_olustur",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "api_farklarini_tespit_et",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "_modul_icerik_olustur",
+      "satir_sayisi": 42,
+      "limit_asimi": 17
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\__init__.py",
+      "fonksiyon": "baslat",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_rapor_olustur",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "fonksiyon": "sistem_durumu",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\sifreleme.py",
+      "fonksiyon": "sifrele",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "siparis_durum_guncelle",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "magaza_hesabi_guncelle",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\iade.py",
+      "fonksiyon": "iade_validasyon",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_kontrol_grubu_olustur",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\ayar_olusturucu.py",
+      "fonksiyon": "ayar_dosyasini_dogrula",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "fonksiyon": "_bolunebilir_bloklari_tespit_et",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_circular_dependency_bul",
+      "satir_sayisi": 41,
+      "limit_asimi": 16
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar.py",
+      "fonksiyon": "musteri_ara",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "fonksiyon": "musteri_ara",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\saglayici_fabrikasi.py",
+      "fonksiyon": "gonder",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "fonksiyon": "job_al",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "bekleyen_kuyruk_listesi",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "urun_bilgisi_getir",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\yardimcilar.py",
+      "fonksiyon": "tablo_doldur",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "toplam_bilgileri_olustur",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\admin_olusturucu.py",
+      "fonksiyon": "admin_varsa_gec",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\dummy_tasiyici.py",
+      "fonksiyon": "durum_sorgula",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "yedekleri_listele",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "islem_loglarini_getir",
+      "satir_sayisi": 40,
+      "limit_asimi": 15
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\cli_arayuzu.py",
+      "fonksiyon": "_analiz_sonuclarini_goster",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_backup_olustur",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\servisler\\ebelge_servisi.py",
+      "fonksiyon": "durum_sorgula",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\baglanti_fabrikasi.py",
+      "fonksiyon": "baglayici_olustur",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\job_kosucu.py",
+      "fonksiyon": "job_ekle",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\job_deposu.py",
+      "fonksiyon": "job_ekle",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "tutar_tutarliligi_kontrol_et",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\numara_servisi.py",
+      "fonksiyon": "sayac_sifirla",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\raporlar.py",
+      "fonksiyon": "rapor_olustur",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "_flake8_kontrolu",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\import_yapisi_analizoru.py",
+      "fonksiyon": "import_bagimlilikları_analiz_et",
+      "satir_sayisi": 39,
+      "limit_asimi": 14
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\kurulum_yoneticisi.py",
+      "fonksiyon": "_test_kurulumunu_dogrula",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "_klasorleri_olustur",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_satiri_sil",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_satiri_sil",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_durum_guncelle",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "satis_fisi_olustur",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "iade_fisi_olustur",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_satiri_guncelle",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "iptal_istatistikleri",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_satir_sil",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\belge_servisi.py",
+      "fonksiyon": "fatura_olustur",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_bakiye_repository.py",
+      "fonksiyon": "tum_bakiyeler_getir",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "bekleyen_tablosunu_guncelle",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "hatali_tablosunu_guncelle",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "admin_kurulumunu_yap",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\veritabani_kontrol.py",
+      "fonksiyon": "alembic_config_yolunu_bul",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\import_yapisi_analizoru.py",
+      "fonksiyon": "mimari_ihlalleri_tespit_et",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "import_yapisini_duzenle",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_import_tutarliligini_kontrol_et",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_isimlendirme_tutarliligini_kontrol_et",
+      "satir_sayisi": 38,
+      "limit_asimi": 13
+    },
+    {
+      "dosya": ".\\scripts\\otomatik-senkron.py",
+      "fonksiyon": "check_and_sync",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "fonksiyon": "placeholder_ekran_olustur",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "_proje_kopyala",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "hata_durumundaki_kuyruklar",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "satis_tamamla",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "sepet_bosalt",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "fis_yazdir",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "es_zamanli_stok_kilitle",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "durum_istatistikleri_al",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\admin_olusturucu.py",
+      "fonksiyon": "sifre_hash_olustur",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "fonksiyon": "tam_kontrol_yap",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "fonksiyon": "dosyayi_bol",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "fonksiyon": "init_dosyasini_guncelle",
+      "satir_sayisi": 37,
+      "limit_asimi": 12
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\yetki.py",
+      "fonksiyon": "en_yuksek_rol_bul",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\iade.py",
+      "fonksiyon": "iade_satiri_validasyon",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_fis_no_guncelle",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_temizle",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "_kuyruk_dict_donustur",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "islem_hata",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "yeni_satis_hazirla",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_satis_ara",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_barkod_isle",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\modeller\\satis_belgesi.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "fonksiyon": "migration_gecmisi",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "klasor_kurulumunu_yap",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "_sinif_bilgisi_olustur",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "_yeni_import_yapisi_olustur",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "_import_duzelt",
+      "satir_sayisi": 36,
+      "limit_asimi": 11
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\__init__.py",
+      "fonksiyon": "durdur",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\depolar\\ebelge_deposu.py",
+      "fonksiyon": "cikis_kaydi_olustur",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\iade_repository.py",
+      "fonksiyon": "iade_tamamla",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_temizle",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "yazici_durumu_kontrol",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "_durum_gecmisi_kaydet",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "fonksiyon": "migration_calistir",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\fonksiyon_boyut_analizoru.py",
+      "fonksiyon": "ast_ile_fonksiyon_analizi",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "_import_ekle",
+      "satir_sayisi": 35,
+      "limit_asimi": 10
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "fonksiyon": "ana_ui_kur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\iade_service.py",
+      "fonksiyon": "iade_satiri_sil",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "guncel_stok_durumu_getir",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_kilidini_serbest_birak",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "fonksiyon": "_sag_panel_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_indirim_uygula",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\barkod_repository.py",
+      "fonksiyon": "ekle",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_hareket_repository.py",
+      "fonksiyon": "hareket_listesi",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\kritik_stok_service.py",
+      "fonksiyon": "depo_bazinda_kritik_stok_raporu",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_transfer_service.py",
+      "fonksiyon": "_validate_transfer_parametreleri",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\baglanti_yardimci.py",
+      "fonksiyon": "postgresql_engine_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\baglanti_yardimci.py",
+      "fonksiyon": "sqlite_engine_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "fonksiyon": "migration_geri_al",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "admin_rollerini_ata",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "varsayilan_terminal_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "siparis_tablosunu_guncelle",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\gosterge_paneli.py",
+      "fonksiyon": "kartlar_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\klasorler.py",
+      "fonksiyon": "klasor_yolunu_dogrula",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\dummy_tasiyici.py",
+      "fonksiyon": "etiket_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\pep8_kontrolcu.py",
+      "fonksiyon": "tam_kontrol_yap",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\fonksiyon_boyut_analizoru.py",
+      "fonksiyon": "buyuk_fonksiyonlari_tespit_et",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "kod_tekrarlarini_tara",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "_benzerlikleri_bul",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_imza_olustur",
+      "satir_sayisi": 34,
+      "limit_asimi": 9
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "tam_kurulum_yap",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "magaza_hesabi_listele",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "_baglanti_test_et",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "islem_tamamla",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\sepet_repository.py",
+      "fonksiyon": "terminal_aktif_sepet_getir",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_sag_panel_olustur",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_adet_degistir",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "belge_dogrula",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "toplu_durum_guncelle",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\sorgu_servisi.py",
+      "fonksiyon": "belge_listesi",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_hareket_repository.py",
+      "fonksiyon": "hareket_ekle",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\negatif_stok_kontrol.py",
+      "fonksiyon": "kontrol_yap",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "fonksiyon": "rezervasyon_iptal",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\migration_yoneticisi.py",
+      "fonksiyon": "migration_cakisma_kontrolu",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "admin_kullanici_olustur",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\gosterge_paneli.py",
+      "fonksiyon": "kart_olustur",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "musteri_tablosunu_guncelle",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\ayar_olusturucu.py",
+      "fonksiyon": "ayar_dosyasini_guncelle",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "klasor_basliklarini_analiz_et",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "_fonksiyon_bilgisi_olustur",
+      "satir_sayisi": 33,
+      "limit_asimi": 8
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "_audit_db_baslat",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\kurulum_yoneticisi.py",
+      "fonksiyon": "tam_kurulum_yap",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\monitoring.py",
+      "fonksiyon": "_saglik_skoru_hesapla",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "_siparis_durum_platforma_gonder",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\satis.py",
+      "fonksiyon": "satis_odeme_validasyon",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\odeme_service.py",
+      "fonksiyon": "sepet_odeme_bilgisi_getir",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\stok_service.py",
+      "fonksiyon": "stok_rezervasyon_serbest_birak",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_iade_kalemleri_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "toplam_tutarlari_hesapla",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_bakiye_repository.py",
+      "fonksiyon": "rezervasyon_iptal",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_sayim_service.py",
+      "fonksiyon": "sayim_veri_ekle",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\veri_yukleyici.py",
+      "fonksiyon": "sistem_rollerini_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "ebelge_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "kullanici_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "yedekleme_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "urun_tablosunu_guncelle",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\klasorler.py",
+      "fonksiyon": "klasor_var_mi",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\depolar.py",
+      "fonksiyon": "etiket_kaydi_olustur",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "fonksiyon": "ana_fonksiyonu_guncelle",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "fonksiyonalite_dogrula",
+      "satir_sayisi": 32,
+      "limit_asimi": 7
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\hatalar.py",
+      "fonksiyon": "hata_isle",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\kayit.py",
+      "fonksiyon": "log_dosyalarini_listele",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_kullanici_onayı_al",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\servisler\\ebelge_servisi.py",
+      "fonksiyon": "_validate_dto",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\depolar\\eticaret_deposu.py",
+      "fonksiyon": "magaza_hesabi_getir",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "decorator",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "_kuyruk_islemini_gonder",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\fis_service.py",
+      "fonksiyon": "_yazici_gonder",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "yeni_sepet_olustur",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_tablo_guncelle",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "_satir_tutar_dogrulama",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\kritik_stok_service.py",
+      "fonksiyon": "kritik_seviye_guncelle",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "fonksiyon": "aktif_rezervasyonlar_listesi",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\yardimcilar.py",
+      "fonksiyon": "onay_iste",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "kargo_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "_dosya_yolundan_modul_adi_cikart",
+      "satir_sayisi": 31,
+      "limit_asimi": 6
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\yetki.py",
+      "fonksiyon": "_rol_izinlerini_hesapla",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "raporu_yazdir",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\ebelge\\depolar\\ebelge_deposu.py",
+      "fonksiyon": "durum_guncelle",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\dogrulama.py",
+      "fonksiyon": "siparis_durum_gecisini_dogrula",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\satis_repository.py",
+      "fonksiyon": "fis_no_ile_satis_getir",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "_islem_direkt_gonder",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "satir_sil",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "sepet_bosalt",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\sepet_service.py",
+      "fonksiyon": "sepet_durum_guncelle",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\env.py",
+      "fonksiyon": "run_migrations_online",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\yardimcilar.py",
+      "fonksiyon": "para_formatla",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "ekrani_hazirla",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "eticaret_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "odeme_tiklandi",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\klasorler.py",
+      "fonksiyon": "eksik_klasorleri_listele",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\dosya_bolucu.py",
+      "fonksiyon": "_fonksiyon_grubu_belirle",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_fonksiyon_imzalarini_cikart",
+      "satir_sayisi": 30,
+      "limit_asimi": 5
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\ayarlar.py",
+      "fonksiyon": "_tip_donusumu_yap",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\hatalar.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\__init__.py",
+      "fonksiyon": "saglik_kontrolu",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "dosya_butunlugu_kontrol_et",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_iade_ozeti_guncelle",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\sepet_ekrani.py",
+      "fonksiyon": "_sepet_bosalt",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "satir_tutarlari_hesapla",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\sorgu_servisi.py",
+      "fonksiyon": "belge_gecmisi",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\sorgu_servisi.py",
+      "fonksiyon": "durum_bazli_belgeler",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\depolar\\stok_hareket_repository.py",
+      "fonksiyon": "kilitle_ve_bakiye_getir",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\depolar\\taban_crud.py",
+      "fonksiyon": "tumu_getir_kayitlar",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "sistem_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "durum_cubugu_olustur",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\baslik_analizoru.py",
+      "fonksiyon": "standart_baslik_olustur",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "ortak_modul_onerileri_olustur",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "_ihlalleri_tespit_et",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\import_duzenleyici.py",
+      "fonksiyon": "dependency_injection_uygula",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\modul_tutarlilik_koruyucu.py",
+      "fonksiyon": "_imza_farklarini_bul",
+      "satir_sayisi": 29,
+      "limit_asimi": 4
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\yetki.py",
+      "fonksiyon": "izin_var_mi",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\kurulum_yoneticisi.py",
+      "fonksiyon": "_git_hooks_kurulumu",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_degisiklikleri_dogrula",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\servisler.py",
+      "fonksiyon": "puan_duzelt",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\depolar\\crm_depolar.py",
+      "fonksiyon": "puan_kaydi_ekle",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\crm\\servisler\\crm_servisler.py",
+      "fonksiyon": "puan_duzelt",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\eticaret\\servisler\\eticaret_servisi.py",
+      "fonksiyon": "siparis_listele",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\database\\models\\sepet.py",
+      "fonksiyon": "sepet_validasyon",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\repositories\\offline_kuyruk_repository.py",
+      "fonksiyon": "kuyruk_getir",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_iade_kontrolleri_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\durum_akis_servisi.py",
+      "fonksiyon": "durum_gecmisi_al",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_entegrasyon_service.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241215_1200_001_ilk_migration.py",
+      "fonksiyon": "downgrade",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\yardimcilar.py",
+      "fonksiyon": "veri_formatla",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ebelge.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "siparis_cek",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\pos_satis.py",
+      "fonksiyon": "sag_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "sol_panel_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\depolar.py",
+      "fonksiyon": "takip_kaydi_ekle",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\tasiyici_arayuzu.py",
+      "fonksiyon": "etiket_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "_rapor_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "_dosyadan_blok_cikar",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "_grup_icin_oneri_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyonel_gruplayici.py",
+      "fonksiyon": "_dosya_isimlerini_olustur",
+      "satir_sayisi": 28,
+      "limit_asimi": 3
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "wrapper",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "kuyruk_istatistikleri_getir",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "_stok_dusumu_islemini_gonder",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\servisler\\satis_iptal_service.py",
+      "fonksiyon": "__init__",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_satis_bilgileri_olustur",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\belge_satir_deposu.py",
+      "fonksiyon": "guncelle",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\numara_sayac_deposu.py",
+      "fonksiyon": "bul_magaza_tur_yil_ay",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\numara_sayac_deposu.py",
+      "fonksiyon": "bul_son_sayac",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\servisler\\dogrulama_servisi.py",
+      "fonksiyon": "satir_dogrula",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\veritabani\\gocler\\versions\\20241216_1400_002_stok_tablolari.py",
+      "fonksiyon": "downgrade",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "stok_gonder",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "fiyat_gonder",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\musteriler.py",
+      "fonksiyon": "verileri_yukle",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kargo\\depolar.py",
+      "fonksiyon": "etiket_durum_guncelle",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring_orkestratori.py",
+      "fonksiyon": "durum_raporu_uret",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\analizorler\\kod_tekrari_analizoru.py",
+      "fonksiyon": "_fonksiyon_blogu_olustur",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\fonksiyon_bolucu.py",
+      "fonksiyon": "_fonksiyon_kodu_olustur",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "rapor_olustur",
+      "satir_sayisi": 27,
+      "limit_asimi": 2
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\arayuz\\ana_pencere_ui.py",
+      "fonksiyon": "menu_kur",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\cekirdek\\kayit.py",
+      "fonksiyon": "log_temizle",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kod_kalitesi\\guvenlik_sistemi.py",
+      "fonksiyon": "_logger_kurulumu",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "kurulum_durumu_kontrol_et",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\monitoring.py",
+      "fonksiyon": "sistem_durumu",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "_satis_islemini_gonder",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\services\\offline_kuyruk_service.py",
+      "fonksiyon": "_iade_islemini_gonder",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\iade_ekrani.py",
+      "fonksiyon": "_secilen_kalemleri_al",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\pos\\ui\\odeme_ekrani.py",
+      "fonksiyon": "_odeme_ozeti_olustur",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\satis_belgeleri\\depolar\\belge_deposu.py",
+      "fonksiyon": "guncelle",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\dto\\urun_dto.py",
+      "fonksiyon": "validate",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\sontechsp\\uygulama\\moduller\\stok\\servisler\\stok_rezervasyon_service.py",
+      "fonksiyon": "_validate_rezervasyon_parametreleri",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "yetki_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\ayarlar.py",
+      "fonksiyon": "rapor_ayarlar_sayfasi_olustur",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\eticaret.py",
+      "fonksiyon": "magaza_degisti",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\kargo.py",
+      "fonksiyon": "tasiyici_degisti",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\arayuz\\ekranlar\\urunler_stok.py",
+      "fonksiyon": "verileri_yukle",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\kurulum\\baslat.py",
+      "fonksiyon": "veritabani_kurulumunu_yap",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\otomatik_kontrol_sistemi.py",
+      "fonksiyon": "fonksiyon_boyut_kontrolu",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    },
+    {
+      "dosya": ".\\uygulama\\moduller\\kod_kalitesi\\refactoring\\ortak_modul_cikarici.py",
+      "fonksiyon": "_kod_icinden_importlari_cikart",
+      "satir_sayisi": 26,
+      "limit_asimi": 1
+    }
+  ],
+  "mimari_ihlaller": [],
+  "oneriler": [
+    "En büyük dosyaları öncelikle bölün",
+    "En büyük fonksiyonları yardımcı fonksiyonlara ayırın",
+    "UI katmanındaki mimari ihlalleri düzeltin",
+    "Kod tekrarlarını ortak modüllere taşıyın"
+  ]
+}

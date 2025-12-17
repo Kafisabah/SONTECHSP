@@ -175,7 +175,10 @@
   - **Doğrular: Gereksinim 6.4**
 
 
-- [ ] 7.2 İzole test edilebilirlik property testi yaz
+- [x] 7.2 İzole test edilebilirlik property testi yaz
+
+
+
   - **Özellik 17: İzole test edilebilirlik**
 
   - **Doğrular: Gereksinim 6.5**
