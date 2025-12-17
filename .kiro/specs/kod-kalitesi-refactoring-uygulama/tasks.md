@@ -45,37 +45,48 @@ Bu görev listesi, kod kalitesi analizi sonuçlarına dayanarak tespit edilen so
 
 ### Faz 2: UI Katmanı Refactoring (Yüksek Öncelik)
 
-- [ ] 2. E-Belge Ekranı Refactoring (ebelge.py - 805 satır)
+- [-] 2. E-Belge Ekranı Refactoring (ebelge.py - 805 satır)
+
   - En büyük dosyayı mantıklı modüllere böl
   - UI fonksiyonalitesini koru
   - Import yapısını güncelle
   - _Requirements: US1.1_
 
-- [ ] 2.1 E-Belge Dosyası Analizi ve Planlama
+
+- [x] 2.1 E-Belge Dosyası Analizi ve Planlama
+
   - `ebelge.py` dosyasını AST ile analiz et
   - Fonksiyonel grupları tespit et (filtreler, işlemler, durum, tablolar)
   - Bölme planını oluştur ve kullanıcı onayı al
   - _Requirements: US1.1_
 
-- [ ] 2.2 E-Belge Filtreler Modülü Oluştur
+
+- [x] 2.2 E-Belge Filtreler Modülü Oluştur
+
   - `filtre_grubu_olustur` fonksiyonunu (106 satır) ayrı dosyaya taşı
   - `ebelge_filtreleri.py` dosyasını oluştur
   - Import'ları güncelle ve test et
   - _Requirements: US1.1_
 
-- [ ] 2.3 E-Belge İşlemler Modülü Oluştur
+
+- [x] 2.3 E-Belge İşlemler Modülü Oluştur
+
   - `islemler_grubu_olustur` fonksiyonunu (110 satır) ayrı dosyaya taşı
   - `ebelge_islemleri.py` dosyasını oluştur
   - Event handler'ları doğru şekilde bağla
   - _Requirements: US1.1_
 
-- [ ] 2.4 E-Belge Durum Modülü Oluştur
+
+- [x] 2.4 E-Belge Durum Modülü Oluştur
+
   - `durum_bilgisi_grubu_olustur` fonksiyonunu (67 satır) ayrı dosyaya taşı
   - `ebelge_durum.py` dosyasını oluştur
   - Durum güncelleme mekanizmalarını test et
   - _Requirements: US1.1_
 
+
 - [ ] 2.5 E-Belge Ana Modülü Optimize Et
+
   - Ana sınıf ve koordinasyon kodunu `ebelge_ana.py`'da tut
   - `__init__.py` ile public API'yi export et
   - Tüm modüllerin doğru entegrasyonunu test et
