@@ -63,7 +63,7 @@ class StokRezervasyonService:
                        referans_id: Optional[int] = None,
                        aciklama: Optional[str] = None) -> str:
         """
-        Stok rezervasyonu yapar
+        Stok rezervasyonu yapar (Ana koordinasyon fonksiyonu)
         
         Args:
             urun_id: Ürün ID
@@ -82,7 +82,36 @@ class StokRezervasyonService:
             StokValidationError: Validasyon hatası durumunda
             StokYetersizError: Yetersiz stok durumunda
         """
-        # Validasyon
+        # 1. Doğrulama
+        self._rezervasyon_dogrula(urun_id, magaza_id, miktar, depo_id)
+        
+        # 2. Rezervasyon oluştur
+        rezervasyon_id = self._rezervasyon_olustur(
+            urun_id, magaza_id, miktar, depo_id, 
+            gecerlilik_suresi, referans_tablo, referans_id, aciklama
+        )
+        
+        # 3. Stok bakiyesinde rezervasyon yap
+        self._stok_rezerve_et(urun_id, magaza_id, miktar, depo_id)
+        
+        return rezervasyon_id
+    
+    def _rezervasyon_dogrula(self, urun_id: int, magaza_id: int, 
+                            miktar: Decimal, depo_id: Optional[int]) -> None:
+        """
+        Rezervasyon parametrelerini doğrular ve stok kontrolü yapar
+        
+        Args:
+            urun_id: Ürün ID
+            magaza_id: Mağaza ID
+            miktar: Rezerve edilecek miktar
+            depo_id: Depo ID
+            
+        Raises:
+            StokValidationError: Validasyon hatası durumunda
+            StokYetersizError: Yetersiz stok durumunda
+        """
+        # Parametre validasyonu
         self._validate_rezervasyon_parametreleri(urun_id, magaza_id, miktar)
         
         # Mevcut kullanılabilir stok miktarını al
@@ -104,7 +133,27 @@ class StokRezervasyonService:
                 kullanilabilir_stok=kullanilabilir_miktar,
                 talep_edilen_miktar=miktar
             )
+    
+    def _rezervasyon_olustur(self, urun_id: int, magaza_id: int, miktar: Decimal,
+                            depo_id: Optional[int], gecerlilik_suresi: Optional[timedelta],
+                            referans_tablo: Optional[str], referans_id: Optional[int],
+                            aciklama: Optional[str]) -> str:
+        """
+        Rezervasyon kaydını oluşturur
         
+        Args:
+            urun_id: Ürün ID
+            magaza_id: Mağaza ID
+            miktar: Rezerve edilecek miktar
+            depo_id: Depo ID
+            gecerlilik_suresi: Geçerlilik süresi
+            referans_tablo: Referans tablo
+            referans_id: Referans ID
+            aciklama: Açıklama
+            
+        Returns:
+            str: Rezervasyon ID
+        """
         # Rezervasyon ID oluştur
         rezervasyon_id = f"RZV_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
         
@@ -130,12 +179,22 @@ class StokRezervasyonService:
         # Rezervasyonu kaydet
         self._aktif_rezervasyonlar[rezervasyon_id] = rezervasyon
         
-        # Stok bakiyesinde rezervasyon yap
+        return rezervasyon_id
+    
+    def _stok_rezerve_et(self, urun_id: int, magaza_id: int, 
+                        miktar: Decimal, depo_id: Optional[int]) -> None:
+        """
+        Stok bakiyesinde rezervasyon yapar
+        
+        Args:
+            urun_id: Ürün ID
+            magaza_id: Mağaza ID
+            miktar: Rezerve edilecek miktar
+            depo_id: Depo ID
+        """
         self._bakiye_repository.rezervasyon_yap(
             urun_id, magaza_id, miktar, depo_id
         )
-        
-        return rezervasyon_id
     
     def rezervasyon_iptal(self, rezervasyon_id: str) -> bool:
         """

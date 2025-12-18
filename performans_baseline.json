@@ -1,0 +1,93 @@
+{
+  "test_tarihi": "2025-12-18T03:25:29.161955",
+  "sistem_bilgileri": {
+    "cpu_sayisi": 4,
+    "toplam_ram": 68353708032,
+    "python_versiyonu": "3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "win32"
+  },
+  "testler": {
+    "bellek_kullanimi": {
+      "baslangic_bellek_mb": 16.6640625,
+      "mevcut_bellek_mb": 30.93359375,
+      "bellek_artisi_mb": 14.26953125,
+      "peak_bellek_mb": 3.201580047607422,
+      "durum": "BASARILI"
+    },
+    "import_hizi": {
+      "import_sureleri_ms": {
+        "uygulama.arayuz.ekranlar.ebelge.ebelge_ana": 0.016927719116210938,
+        "uygulama.arayuz.ekranlar.raporlar.rapor_olusturma": 0.0045299530029296875,
+        "uygulama.arayuz.ekranlar.ayarlar.ayarlar": "HATA: No module named 'uygulama.arayuz.taban_ekran'",
+        "uygulama.pos.repositories.satis_repository.satis_crud": "HATA: No module named 'uygulama.pos'",
+        "uygulama.pos.repositories.offline_kuyruk_repository.kuyruk_islemleri": "HATA: No module named 'uygulama.pos'"
+      },
+      "toplam_sure_ms": 0.021457672119140625,
+      "ortalama_sure_ms": 0.010728836059570312,
+      "durum": "BASARILI"
+    },
+    "dosya_boyutu": {
+      "toplam_dosya": 17,
+      "hedef_altinda_dosya": 5,
+      "hedef_yuzdesi": 29.411764705882355,
+      "buyuk_dosyalar": [
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ebelge\\ebelge_ana.py",
+          "satir_sayisi": 174
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ebelge\\ebelge_tablolar.py",
+          "satir_sayisi": 213
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ebelge\\ebelge_veri_yoneticisi.py",
+          "satir_sayisi": 162
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/raporlar\\raporlar_ana.py",
+          "satir_sayisi": 145
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/raporlar\\rapor_filtreleri.py",
+          "satir_sayisi": 263
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/raporlar\\rapor_olusturma.py",
+          "satir_sayisi": 161
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/raporlar\\rapor_yardimcilar.py",
+          "satir_sayisi": 192
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ayarlar\\ayarlar.py",
+          "satir_sayisi": 348
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ayarlar\\ayar_butonlari.py",
+          "satir_sayisi": 149
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ayarlar\\ayar_dogrulama.py",
+          "satir_sayisi": 294
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ayarlar\\ayar_formlari.py",
+          "satir_sayisi": 341
+        },
+        {
+          "dosya": "uygulama/arayuz/ekranlar/ayarlar\\test_ayarlar_refactor.py",
+          "satir_sayisi": 130
+        }
+      ],
+      "durum": "UYARI"
+    },
+    "cpu_kullanimi": {
+      "baslangic_cpu_yuzde": 87.3,
+      "bitis_cpu_yuzde": 76.5,
+      "cpu_artisi_yuzde": -10.799999999999997,
+      "islem_suresi_saniye": 0.14565658569335938,
+      "durum": "BASARILI"
+    }
+  }
+}

@@ -181,7 +181,7 @@ class OfflineKuyrukService(IOfflineKuyrukService):
     
     def kuyruk_senkronize_et(self) -> int:
         """
-        Kuyruğu senkronize eder
+        Kuyruğu senkronize eder (Ana koordinasyon fonksiyonu)
         
         Bekleyen işlemleri sırayla gönderir ve durumlarını günceller.
         Thread-safe implementasyon.
@@ -195,77 +195,11 @@ class OfflineKuyrukService(IOfflineKuyrukService):
         """
         with self._senkron_lock:
             try:
-                # Network durumu kontrol et
-                if not self.network_durumu_kontrol():
-                    raise NetworkHatasi("Network bağlantısı yok, senkronizasyon yapılamaz")
+                # 1. Ön kontroller
+                self._senkron_on_kontrol()
                 
-                self._logger.info("Kuyruk senkronizasyonu başlatıldı")
-                
-                islenen_sayisi = 0
-                basla_zamani = datetime.now()
-                
-                while True:
-                    # Zaman aşımı kontrolü
-                    gecen_sure = (datetime.now() - basla_zamani).total_seconds()
-                    if gecen_sure > self._max_senkron_suresi:
-                        self._logger.warning(f"Senkronizasyon zaman aşımı: {gecen_sure} saniye")
-                        break
-                    
-                    # Bekleyen işlemleri getir
-                    bekleyen_islemler = self._kuyruk_repo.bekleyen_kuyruk_listesi(
-                        limit=self._senkron_batch_boyutu
-                    )
-                    
-                    if not bekleyen_islemler:
-                        break
-                    
-                    # Her işlemi sırayla gönder
-                    for islem in bekleyen_islemler:
-                        try:
-                            # Network durumu tekrar kontrol et
-                            if not self.network_durumu_kontrol():
-                                self._logger.warning("Network bağlantısı kesildi, senkronizasyon durduruluyor")
-                                return islenen_sayisi
-                            
-                            # İşlemi işleniyor durumuna getir
-                            self._kuyruk_repo.kuyruk_durum_guncelle(
-                                islem['id'], 
-                                KuyrukDurum.ISLENIYOR
-                            )
-                            
-                            # İşlemi gönder
-                            basarili = self._kuyruk_islemini_gonder(islem)
-                            
-                            if basarili:
-                                # Başarılı - tamamlandı olarak işaretle
-                                self._kuyruk_repo.kuyruk_durum_guncelle(
-                                    islem['id'], 
-                                    KuyrukDurum.TAMAMLANDI
-                                )
-                                islenen_sayisi += 1
-                                self._logger.debug(f"Kuyruk işlemi tamamlandı: ID={islem['id']}")
-                            else:
-                                # Başarısız - deneme sayısını artır
-                                self._kuyruk_repo.kuyruk_deneme_artir(
-                                    islem['id'], 
-                                    "Senkronizasyon sırasında işlem başarısız"
-                                )
-                                self._logger.warning(f"Kuyruk işlemi başarısız: ID={islem['id']}")
-                        
-                        except Exception as e:
-                            # Hata durumu - deneme sayısını artır
-                            try:
-                                self._kuyruk_repo.kuyruk_deneme_artir(
-                                    islem['id'], 
-                                    f"Senkronizasyon hatası: {str(e)}"
-                                )
-                            except Exception:
-                                pass
-                            
-                            self._logger.error(f"Kuyruk işlemi hatası: ID={islem['id']}, Hata: {str(e)}")
-                    
-                    # Kısa bekleme
-                    time.sleep(0.1)
+                # 2. Senkronizasyon döngüsü
+                islenen_sayisi = self._senkron_dongusu_calistir()
                 
                 self._logger.info(f"Kuyruk senkronizasyonu tamamlandı: {islenen_sayisi} işlem")
                 return islenen_sayisi
@@ -275,6 +209,153 @@ class OfflineKuyrukService(IOfflineKuyrukService):
             except Exception as e:
                 self._logger.error(f"Kuyruk senkronizasyon hatası: {str(e)}")
                 raise SontechHatasi(f"Kuyruk senkronize edilemedi: {str(e)}")
+    
+    def _senkron_on_kontrol(self) -> None:
+        """
+        Senkronizasyon öncesi kontrolleri yapar
+        
+        Raises:
+            NetworkHatasi: Network bağlantısı yok
+        """
+        # Network durumu kontrol et
+        if not self.network_durumu_kontrol():
+            raise NetworkHatasi("Network bağlantısı yok, senkronizasyon yapılamaz")
+        
+        self._logger.info("Kuyruk senkronizasyonu başlatıldı")
+    
+    def _senkron_dongusu_calistir(self) -> int:
+        """
+        Ana senkronizasyon döngüsünü çalıştırır
+        
+        Returns:
+            int: İşlenen kayıt sayısı
+        """
+        islenen_sayisi = 0
+        basla_zamani = datetime.now()
+        
+        while True:
+            # Zaman aşımı kontrolü
+            if self._zaman_asimi_kontrol(basla_zamani):
+                break
+            
+            # Bekleyen işlemleri getir
+            bekleyen_islemler = self._kuyruk_repo.bekleyen_kuyruk_listesi(
+                limit=self._senkron_batch_boyutu
+            )
+            
+            if not bekleyen_islemler:
+                break
+            
+            # İşlemleri sırayla gönder
+            batch_islenen = self._batch_islemlerini_gonder(bekleyen_islemler)
+            islenen_sayisi += batch_islenen
+            
+            # Network bağlantısı kesildi mi kontrol et
+            if not self.network_durumu_kontrol():
+                self._logger.warning("Network bağlantısı kesildi, senkronizasyon durduruluyor")
+                break
+            
+            # Kısa bekleme
+            time.sleep(0.1)
+        
+        return islenen_sayisi
+    
+    def _zaman_asimi_kontrol(self, basla_zamani: datetime) -> bool:
+        """
+        Zaman aşımı kontrolü yapar
+        
+        Args:
+            basla_zamani: Başlangıç zamanı
+            
+        Returns:
+            bool: Zaman aşımı var mı
+        """
+        gecen_sure = (datetime.now() - basla_zamani).total_seconds()
+        if gecen_sure > self._max_senkron_suresi:
+            self._logger.warning(f"Senkronizasyon zaman aşımı: {gecen_sure} saniye")
+            return True
+        return False
+    
+    def _batch_islemlerini_gonder(self, bekleyen_islemler: List[Dict]) -> int:
+        """
+        Batch işlemlerini gönderir
+        
+        Args:
+            bekleyen_islemler: Bekleyen işlem listesi
+            
+        Returns:
+            int: Bu batch'te işlenen kayıt sayısı
+        """
+        batch_islenen = 0
+        
+        for islem in bekleyen_islemler:
+            try:
+                # Network durumu tekrar kontrol et
+                if not self.network_durumu_kontrol():
+                    break
+                
+                # Tek işlemi gönder
+                if self._tek_islemi_gonder(islem):
+                    batch_islenen += 1
+                
+            except Exception as e:
+                self._islem_hata_yonet(islem, e)
+        
+        return batch_islenen
+    
+    def _tek_islemi_gonder(self, islem: Dict) -> bool:
+        """
+        Tek işlemi gönderir
+        
+        Args:
+            islem: İşlem bilgisi
+            
+        Returns:
+            bool: İşlem başarılı mı
+        """
+        # İşlemi işleniyor durumuna getir
+        self._kuyruk_repo.kuyruk_durum_guncelle(
+            islem['id'], 
+            KuyrukDurum.ISLENIYOR
+        )
+        
+        # İşlemi gönder
+        basarili = self._kuyruk_islemini_gonder(islem)
+        
+        if basarili:
+            # Başarılı - tamamlandı olarak işaretle
+            self._kuyruk_repo.kuyruk_durum_guncelle(
+                islem['id'], 
+                KuyrukDurum.TAMAMLANDI
+            )
+            self._logger.debug(f"Kuyruk işlemi tamamlandı: ID={islem['id']}")
+            return True
+        else:
+            # Başarısız - deneme sayısını artır
+            self._kuyruk_repo.kuyruk_deneme_artir(
+                islem['id'], 
+                "Senkronizasyon sırasında işlem başarısız"
+            )
+            self._logger.warning(f"Kuyruk işlemi başarısız: ID={islem['id']}")
+            return False
+    
+    def _islem_hata_yonet(self, islem: Dict, hata: Exception) -> None:
+        """
+        İşlem hatası yönetimi
+        
+        Args:
+            islem: İşlem bilgisi
+            hata: Oluşan hata
+        """
+        try:
+            self._kuyruk_repo.kuyruk_deneme_artir(
+                islem['id'], 
+                f"Senkronizasyon hatası: {str(hata)}"
+            )
+        except Exception:
+            pass
+        
+        self._logger.error(f"Kuyruk işlemi hatası: ID={islem['id']}, Hata: {str(hata)}")
     
     def offline_durum_bildir(self, terminal_id: int, kasiyer_id: int, 
                            islem_turu: IslemTuru) -> None:

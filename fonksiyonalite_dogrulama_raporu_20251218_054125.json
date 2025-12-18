@@ -1,0 +1,67 @@
+{
+  "ui_testleri": {
+    "ebelge_ekrani": {
+      "durum": "HATA",
+      "mesaj": "E-Belge modülleri import edilemedi: No module named 'uygulama.arayuz.taban_ekran'"
+    },
+    "raporlar_ekrani": {
+      "durum": "HATA",
+      "mesaj": "RaporlarEkrani sınıfı bulunamadı"
+    },
+    "ayarlar_ekrani": {
+      "durum": "HATA",
+      "mesaj": "Ayarlar modülleri import edilemedi: No module named 'uygulama.arayuz.taban_ekran'"
+    }
+  },
+  "is_kurallari": {
+    "stok_kurallari": {
+      "durum": "BASARILI",
+      "mesaj": "Stok transfer servisi fonksiyonları mevcut"
+    },
+    "pos_kurallari": {
+      "durum": "BASARILI",
+      "mesaj": "POS servisleri fonksiyonları mevcut"
+    },
+    "repository_kurallari": {
+      "durum": "BASARILI",
+      "mesaj": "Repository sınıfları mevcut"
+    }
+  },
+  "api_sozlesmeleri": {
+    "servis_arayuzleri": {
+      "durum": "HATA",
+      "mesaj": "Servis arayüzleri eksik"
+    },
+    "dto_yapilari": {
+      "durum": "BASARILI",
+      "mesaj": "DTO yapıları korunmuş"
+    },
+    "repository_arayuzleri": {
+      "durum": "HATA",
+      "mesaj": "Repository arayüzleri import edilemedi: cannot import name 'satis_repository' from 'sontechsp.uygulama.moduller.pos.depolar' (D:\\SONTECHSP\\sontechsp\\uygulama\\moduller\\pos\\depolar\\__init__.py)"
+    }
+  },
+  "import_testleri": {
+    "dongüsel_import": {
+      "durum": "HATA",
+      "mesaj": "Import hatası (döngüsel import olabilir): cannot import name 'ebelge' from 'sontechsp.uygulama.arayuz' (D:\\SONTECHSP\\sontechsp\\uygulama\\arayuz\\__init__.py)"
+    },
+    "eksik_import": {
+      "durum": "HATA",
+      "mesaj": "Eksik import tespit edildi: No module named 'sontechsp.uygulama.arayuz.ebelge'"
+    },
+    "init_dosyalari": {
+      "durum": "HATA",
+      "mesaj": "__init__.py export hatası: No module named 'sontechsp.uygulama.arayuz.ebelge'"
+    }
+  },
+  "genel_durum": "HATA",
+  "ozet": {
+    "toplam_test": 12,
+    "basari_sayisi": 4,
+    "hata_sayisi": 8,
+    "basari_orani": 33.33333333333333,
+    "durum_mesaji": "❌ Kritik hatalar mevcut (33.3% başarı)",
+    "test_tarihi": "2025-12-18T05:41:25.954956"
+  }
+}

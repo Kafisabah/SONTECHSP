@@ -1,0 +1,59 @@
+{
+  "test_tarihi": "2025-12-18T03:30:47.676903",
+  "mimari_kurallar": {
+    "katman_sinirlari": "ui -> services -> repositories -> database",
+    "yasakli_bagimliliklar": [
+      "ui -> repositories",
+      "ui -> database",
+      "services -> ui",
+      "repositories -> services",
+      "repositories -> ui"
+    ]
+  },
+  "dogrulama_sonuclari": {
+    "katman_sinirlari": {
+      "toplam_katman_gecisi": 0,
+      "katman_gecis_dagilimi": {},
+      "ihlal_sayisi": 0,
+      "ihlaller": [],
+      "durum": "BASARILI"
+    },
+    "dongusel_importlar": {
+      "dongu_sayisi": 0,
+      "donguler": [],
+      "durum": "BASARILI"
+    },
+    "dependency_injection": {
+      "toplam_sinif": 0,
+      "di_uygulayan_sinif": 0,
+      "di_ihlal_eden_sinif": 0,
+      "di_uygulama_orani": 0,
+      "di_uygulamalari": [],
+      "di_ihlalleri": [],
+      "durum": "UYARI"
+    },
+    "modul_yapisi": {
+      "modul_istatistikleri": {
+        "toplam_modul": 3,
+        "init_dosyasi_olan": 3,
+        "public_api_tanimlayan": 3,
+        "dokumantasyon_olan": 0
+      },
+      "init_dosyasi_orani": 100.0,
+      "public_api_orani": 100.0,
+      "modul_sorunlari": [],
+      "durum": "BASARILI"
+    }
+  },
+  "ozet": {
+    "toplam_test": 4,
+    "basarili_test": 3,
+    "uyari_test": 1,
+    "hata_test": 0,
+    "genel_basari_orani": 75.0,
+    "kritik_sorunlar": [],
+    "oneriler": [
+      "Dependency injection pattern'ini daha yaygın kullanın"
+    ]
+  }
+}

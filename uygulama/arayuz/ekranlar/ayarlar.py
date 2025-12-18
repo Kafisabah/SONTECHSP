@@ -1,22 +1,22 @@
 # Version: 0.1.0
-# Last Update: 2024-12-16
+# Last Update: 2024-12-18
 # Module: uygulama.arayuz.ekranlar.ayarlar
-# Description: Ayarlar ekranı
+# Description: Ayarlar ekranı - refactor edilmiş ana koordinatör
 # Changelog:
 # - İlk sürüm oluşturuldu
+# - Modüler yapıya refactor edildi
 
 from PyQt6.QtWidgets import (QHBoxLayout, QVBoxLayout, QLabel, QPushButton, 
-                             QTableWidget, QTableWidgetItem, QFrame,
-                             QGridLayout, QHeaderView, QComboBox, QGroupBox,
-                             QSplitter, QTabWidget, QProgressBar, QTextEdit,
-                             QLineEdit, QDateEdit, QCheckBox, QSpinBox,
-                             QScrollArea, QWidget, QListWidget, QListWidgetItem,
-                             QStackedWidget, QFormLayout, QSlider, QDoubleSpinBox)
-from PyQt6.QtCore import Qt, QTimer, QDate
-from PyQt6.QtGui import QFont, QPixmap, QIcon
+                             QFrame, QSplitter, QProgressBar,
+                             QListWidget, QListWidgetItem, QStackedWidget, 
+                             QGroupBox, QFormLayout)
+from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtGui import QFont
 from .temel_ekran import TemelEkran
 from ..servis_fabrikasi import ServisFabrikasi
-from ..yardimcilar import UIYardimcilari
+from .ayarlar.ayar_butonlari import AyarButonlari
+from .ayarlar.ayar_formlari import AyarFormlari
+from .ayarlar.ayar_dogrulama import AyarDogrulama
 
 
 class Ayarlar(TemelEkran):

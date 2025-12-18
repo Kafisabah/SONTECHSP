@@ -165,7 +165,7 @@ class OdemeService(IOdemeService):
     @islem_izle("odeme_parcali_odeme")
     def parcali_odeme_yap(self, sepet_id: int, odemeler: List[Dict[str, Any]]) -> bool:
         """
-        Parçalı ödeme işlemi yapar
+        Parçalı ödeme işlemi yapar (Ana koordinasyon fonksiyonu)
         
         Args:
             sepet_id: Sepet kimliği
@@ -180,6 +180,35 @@ class OdemeService(IOdemeService):
         """
         self._logger.info(f"Parçalı ödeme başlatılıyor - Sepet: {sepet_id}, Ödeme sayısı: {len(odemeler)}")
         
+        # 1. Doğrulama
+        sepet = self._parcali_odeme_dogrula(sepet_id, odemeler)
+        
+        # 2. Ödeme tutarları kontrolü
+        self._odeme_tutarlari_kontrol(odemeler, sepet)
+        
+        # 3. Satış işlemi
+        satis_id = self._satis_islemi_yap(sepet, odemeler)
+        
+        # 4. İşlemi tamamla
+        fis_no = self._odeme_tamamla(sepet_id, satis_id, sepet)
+        
+        self._logger.info(f"Parçalı ödeme tamamlandı - Satış ID: {satis_id}, Fiş No: {fis_no}")
+        return True
+    
+    def _parcali_odeme_dogrula(self, sepet_id: int, odemeler: List[Dict[str, Any]]) -> Dict:
+        """
+        Parçalı ödeme parametrelerini doğrular
+        
+        Args:
+            sepet_id: Sepet kimliği
+            odemeler: Ödeme listesi
+            
+        Returns:
+            Dict: Sepet bilgisi
+            
+        Raises:
+            DogrulamaHatasi: Geçersiz parametreler
+        """
         # Parametre validasyonu
         if sepet_id <= 0:
             raise DogrulamaHatasi("sepet_id_pozitif", "Sepet ID pozitif olmalıdır")
@@ -195,11 +224,23 @@ class OdemeService(IOdemeService):
         if sepet['durum'] != SepetDurum.AKTIF.value:
             raise DogrulamaHatasi("sepet_aktif_degil", "Sepet aktif durumda değil")
         
-        sepet_toplam = Decimal(str(sepet['toplam_tutar']))
-        net_tutar = Decimal(str(sepet.get('net_tutar', sepet['toplam_tutar'])))
+        return sepet
+    
+    def _odeme_tutarlari_kontrol(self, odemeler: List[Dict[str, Any]], sepet: Dict) -> None:
+        """
+        Ödeme tutarlarını kontrol eder
         
-        # Ödeme tutarları kontrolü
+        Args:
+            odemeler: Ödeme listesi
+            sepet: Sepet bilgisi
+            
+        Raises:
+            DogrulamaHatasi: Geçersiz ödeme tutarları
+            OdemeHatasi: Toplam ödeme uyumsuzluğu
+        """
+        net_tutar = Decimal(str(sepet.get('net_tutar', sepet['toplam_tutar'])))
         toplam_odeme = Decimal('0.00')
+        
         for odeme in odemeler:
             if 'turu' not in odeme or 'tutar' not in odeme:
                 raise DogrulamaHatasi("odeme_eksik_alan", "Ödeme türü ve tutarı zorunludur")
@@ -214,13 +255,29 @@ class OdemeService(IOdemeService):
         if toplam_odeme != net_tutar:
             raise OdemeHatasi(
                 f"Toplam ödeme sepet toplamına eşit değil. Beklenen: {net_tutar}, Verilen: {toplam_odeme}",
-                sepet_id, toplam_odeme
+                sepet['id'], toplam_odeme
             )
+    
+    def _satis_islemi_yap(self, sepet: Dict, odemeler: List[Dict[str, Any]]) -> int:
+        """
+        Satış işlemini gerçekleştirir
         
+        Args:
+            sepet: Sepet bilgisi
+            odemeler: Ödeme listesi
+            
+        Returns:
+            int: Satış ID
+            
+        Raises:
+            Exception: Satış işlemi hatası
+        """
         try:
+            sepet_toplam = Decimal(str(sepet['toplam_tutar']))
+            
             # Satış kaydı oluştur
             satis_id = self._satis_repository.satis_olustur(
-                sepet_id=sepet_id,
+                sepet_id=sepet['id'],
                 terminal_id=sepet['terminal_id'],
                 kasiyer_id=sepet['kasiyer_id'],
                 toplam_tutar=sepet_toplam
@@ -239,6 +296,28 @@ class OdemeService(IOdemeService):
                     referans_no=odeme.get('referans')
                 )
             
+            return satis_id
+            
+        except Exception as e:
+            self._logger.error(f"Satış işlemi hatası: {str(e)}")
+            raise
+    
+    def _odeme_tamamla(self, sepet_id: int, satis_id: int, sepet: Dict) -> str:
+        """
+        Ödeme işlemini tamamlar
+        
+        Args:
+            sepet_id: Sepet ID
+            satis_id: Satış ID
+            sepet: Sepet bilgisi
+            
+        Returns:
+            str: Fiş numarası
+            
+        Raises:
+            Exception: Tamamlama işlemi hatası
+        """
+        try:
             # Stok düşümü yap (stok servisi varsa)
             if self._stok_service:
                 self._stok_dusumu_yap(sepet)
@@ -252,11 +331,10 @@ class OdemeService(IOdemeService):
             # Sepet durumunu güncelle
             self._sepet_repository.sepet_durum_guncelle(sepet_id, SepetDurum.TAMAMLANDI)
             
-            self._logger.info(f"Parçalı ödeme tamamlandı - Satış ID: {satis_id}, Fiş No: {fis_no}")
-            return True
+            return fis_no
             
         except Exception as e:
-            self._logger.error(f"Parçalı ödeme hatası: {str(e)}")
+            self._logger.error(f"Ödeme tamamlama hatası: {str(e)}")
             raise
     
     def odeme_tutari_kontrol(self, sepet_id: int, odeme_tutari: Decimal) -> Dict[str, Any]:

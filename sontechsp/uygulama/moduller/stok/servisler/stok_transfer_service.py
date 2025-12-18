@@ -1,5 +1,5 @@
 # Version: 0.1.0
-# Last Update: 2024-12-16
+# Last Update: 2024-12-18
 # Module: stok.servisler.stok_transfer_service
 # Description: SONTECHSP stok transfer servisi
 # Changelog:
@@ -48,7 +48,7 @@ class StokTransferService:
                     kullanici_id: Optional[int] = None,
                     aciklama: Optional[str] = None) -> str:
         """
-        Stok transfer işlemi gerçekleştirir
+        Stok transfer işlemi gerçekleştirir (Ana koordinasyon fonksiyonu)
         
         Args:
             urun_id: Transfer edilecek ürün ID
@@ -68,119 +68,20 @@ class StokTransferService:
             StokYetersizError: Yetersiz stok durumunda
             EsZamanliErisimError: Eş zamanlı erişim hatası durumunda
         """
-        # Validasyon
-        self._validate_transfer_parametreleri(
-            urun_id, kaynak_magaza_id, hedef_magaza_id, miktar
-        )
+        # 1. Doğrulama
+        self._transfer_dogrula(urun_id, kaynak_magaza_id, hedef_magaza_id, miktar)
         
-        # Transfer referans numarası oluştur
+        # 2. Transfer referans numarası oluştur
         transfer_ref = f"TRF_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
         
-        # Kaynak stok kontrolü ve kilitleme
-        kaynak_bakiye = self._bakiye_repository.kilitle_ve_bakiye_getir(
-            urun_id, kaynak_magaza_id, kaynak_depo_id
-        )
+        # 3. Stok rezervasyonu ve kontrol
+        kaynak_bakiye = self._stok_rezerve_et(urun_id, kaynak_magaza_id, kaynak_depo_id, miktar)
         
-        if not kaynak_bakiye:
-            raise StokYetersizError(
-                f"Kaynak lokasyonda stok bulunamadı",
-                urun_kodu=f"ID:{urun_id}",
-                kullanilabilir_stok=Decimal('0'),
-                talep_edilen_miktar=miktar
-            )
+        # 4. Transfer kaydı
+        self._transfer_kaydet(transfer_ref, urun_id, kaynak_magaza_id, hedef_magaza_id, 
+                             miktar, kaynak_depo_id, hedef_depo_id, kullanici_id, kaynak_bakiye)
         
-        if kaynak_bakiye.kullanilabilir_miktar < miktar:
-            raise StokYetersizError(
-                f"Yetersiz stok. Mevcut: {kaynak_bakiye.kullanilabilir_miktar}, Talep: {miktar}",
-                urun_kodu=f"ID:{urun_id}",
-                kullanilabilir_stok=kaynak_bakiye.kullanilabilir_miktar,
-                talep_edilen_miktar=miktar
-            )
-        
-        try:
-            # Çıkış hareketi (kaynak)
-            cikis_hareket = StokHareketDTO(
-                urun_id=urun_id,
-                magaza_id=kaynak_magaza_id,
-                depo_id=kaynak_depo_id,
-                hareket_tipi="TRANSFER_CIKIS",
-                miktar=-miktar,  # Negatif (çıkış)
-                aciklama=f"Transfer çıkışı - Ref: {transfer_ref} - Hedef: M{hedef_magaza_id}D{hedef_depo_id or 0}",
-                kullanici_id=kullanici_id,
-                referans_tablo="stok_transferleri",
-                referans_id=None  # Transfer tablosu ID'si olabilir
-            )
-            
-            # Giriş hareketi (hedef)
-            giris_hareket = StokHareketDTO(
-                urun_id=urun_id,
-                magaza_id=hedef_magaza_id,
-                depo_id=hedef_depo_id,
-                hareket_tipi="TRANSFER_GIRIS",
-                miktar=miktar,  # Pozitif (giriş)
-                aciklama=f"Transfer girişi - Ref: {transfer_ref} - Kaynak: M{kaynak_magaza_id}D{kaynak_depo_id or 0}",
-                kullanici_id=kullanici_id,
-                referans_tablo="stok_transferleri",
-                referans_id=None
-            )
-            
-            # Hareketleri kaydet
-            cikis_hareket_id = self._hareket_repository.hareket_ekle(cikis_hareket)
-            giris_hareket_id = self._hareket_repository.hareket_ekle(giris_hareket)
-            
-            # Kaynak bakiyeyi güncelle
-            yeni_kaynak_miktar = kaynak_bakiye.miktar - miktar
-            yeni_kaynak_kullanilabilir = kaynak_bakiye.kullanilabilir_miktar - miktar
-            
-            self._bakiye_repository.bakiye_guncelle(
-                kaynak_bakiye.id,
-                yeni_kaynak_miktar,
-                kaynak_bakiye.rezerve_miktar,
-                yeni_kaynak_kullanilabilir,
-                None,  # birim_fiyat
-                datetime.utcnow()
-            )
-            
-            # Hedef bakiyeyi güncelle veya oluştur
-            hedef_bakiye = self._bakiye_repository.bakiye_getir(
-                urun_id, hedef_magaza_id, hedef_depo_id
-            )
-            
-            if hedef_bakiye:
-                # Mevcut bakiyeyi güncelle
-                yeni_hedef_miktar = hedef_bakiye.miktar + miktar
-                yeni_hedef_kullanilabilir = hedef_bakiye.kullanilabilir_miktar + miktar
-                
-                self._bakiye_repository.bakiye_guncelle(
-                    hedef_bakiye.id,
-                    yeni_hedef_miktar,
-                    hedef_bakiye.rezerve_miktar,
-                    yeni_hedef_kullanilabilir,
-                    None,  # birim_fiyat
-                    datetime.utcnow()
-                )
-            else:
-                # Yeni bakiye oluştur
-                yeni_hedef_bakiye = StokBakiyeDTO(
-                    urun_id=urun_id,
-                    magaza_id=hedef_magaza_id,
-                    depo_id=hedef_depo_id,
-                    miktar=miktar,
-                    rezerve_miktar=Decimal('0'),
-                    kullanilabilir_miktar=miktar,
-                    son_hareket_tarihi=datetime.utcnow()
-                )
-                
-                self._bakiye_repository.bakiye_ekle(yeni_hedef_bakiye)
-            
-            return transfer_ref
-            
-        except Exception as e:
-            # Hata durumunda rollback yapılacak (repository seviyesinde)
-            raise EsZamanliErisimError(
-                f"Transfer işlemi sırasında hata oluştu: {str(e)}",
-                kaynak=f"Transfer: {transfer_ref}"
-            )
+        return transfer_ref
     
     def transfer_iptal(self, transfer_ref: str, kullanici_id: Optional[int] = None) -> bool:
         """
@@ -308,6 +209,237 @@ class StokTransferService:
                     }
         
         return list(transfer_gruplari.values())
+    
+    def _transfer_dogrula(self,
+                         urun_id: int,
+                         kaynak_magaza_id: int,
+                         hedef_magaza_id: int,
+                         miktar: Decimal) -> None:
+        """
+        Transfer parametrelerini doğrular
+        
+        Args:
+            urun_id: Ürün ID
+            kaynak_magaza_id: Kaynak mağaza ID
+            hedef_magaza_id: Hedef mağaza ID
+            miktar: Transfer miktarı
+            
+        Raises:
+            StokValidationError: Validasyon hatası durumunda
+        """
+        self._validate_transfer_parametreleri(urun_id, kaynak_magaza_id, hedef_magaza_id, miktar)
+    
+    def _stok_rezerve_et(self,
+                        urun_id: int,
+                        kaynak_magaza_id: int,
+                        kaynak_depo_id: Optional[int],
+                        miktar: Decimal) -> StokBakiyeDTO:
+        """
+        Kaynak stok kontrolü ve kilitleme işlemi
+        
+        Args:
+            urun_id: Ürün ID
+            kaynak_magaza_id: Kaynak mağaza ID
+            kaynak_depo_id: Kaynak depo ID
+            miktar: Transfer miktarı
+            
+        Returns:
+            StokBakiyeDTO: Kaynak bakiye bilgisi
+            
+        Raises:
+            StokYetersizError: Yetersiz stok durumunda
+        """
+        # Kaynak stok kontrolü ve kilitleme
+        kaynak_bakiye = self._bakiye_repository.kilitle_ve_bakiye_getir(
+            urun_id, kaynak_magaza_id, kaynak_depo_id
+        )
+        
+        if not kaynak_bakiye:
+            raise StokYetersizError(
+                f"Kaynak lokasyonda stok bulunamadı",
+                urun_kodu=f"ID:{urun_id}",
+                kullanilabilir_stok=Decimal('0'),
+                talep_edilen_miktar=miktar
+            )
+        
+        if kaynak_bakiye.kullanilabilir_miktar < miktar:
+            raise StokYetersizError(
+                f"Yetersiz stok. Mevcut: {kaynak_bakiye.kullanilabilir_miktar}, Talep: {miktar}",
+                urun_kodu=f"ID:{urun_id}",
+                kullanilabilir_stok=kaynak_bakiye.kullanilabilir_miktar,
+                talep_edilen_miktar=miktar
+            )
+        
+        return kaynak_bakiye
+    
+    def _transfer_kaydet(self,
+                        transfer_ref: str,
+                        urun_id: int,
+                        kaynak_magaza_id: int,
+                        hedef_magaza_id: int,
+                        miktar: Decimal,
+                        kaynak_depo_id: Optional[int],
+                        hedef_depo_id: Optional[int],
+                        kullanici_id: Optional[int],
+                        kaynak_bakiye: StokBakiyeDTO) -> None:
+        """
+        Transfer hareketlerini kaydeder ve bakiyeleri günceller
+        
+        Args:
+            transfer_ref: Transfer referans numarası
+            urun_id: Ürün ID
+            kaynak_magaza_id: Kaynak mağaza ID
+            hedef_magaza_id: Hedef mağaza ID
+            miktar: Transfer miktarı
+            kaynak_depo_id: Kaynak depo ID
+            hedef_depo_id: Hedef depo ID
+            kullanici_id: Kullanıcı ID
+            kaynak_bakiye: Kaynak bakiye bilgisi
+            
+        Raises:
+            EsZamanliErisimError: Transfer işlemi sırasında hata durumunda
+        """
+        try:
+            # Çıkış ve giriş hareketlerini oluştur
+            cikis_hareket_id, giris_hareket_id = self._hareketleri_olustur(
+                transfer_ref, urun_id, kaynak_magaza_id, hedef_magaza_id,
+                miktar, kaynak_depo_id, hedef_depo_id, kullanici_id
+            )
+            
+            # Kaynak bakiyeyi güncelle
+            self._kaynak_bakiye_guncelle(kaynak_bakiye, miktar)
+            
+            # Hedef bakiyeyi güncelle veya oluştur
+            self._hedef_bakiye_guncelle(urun_id, hedef_magaza_id, hedef_depo_id, miktar)
+            
+        except Exception as e:
+            # Hata durumunda rollback yapılacak (repository seviyesinde)
+            raise EsZamanliErisimError(
+                f"Transfer işlemi sırasında hata oluştu: {str(e)}",
+                kaynak=f"Transfer: {transfer_ref}"
+            )
+    
+    def _hareketleri_olustur(self,
+                            transfer_ref: str,
+                            urun_id: int,
+                            kaynak_magaza_id: int,
+                            hedef_magaza_id: int,
+                            miktar: Decimal,
+                            kaynak_depo_id: Optional[int],
+                            hedef_depo_id: Optional[int],
+                            kullanici_id: Optional[int]) -> tuple:
+        """
+        Transfer için çıkış ve giriş hareketlerini oluşturur
+        
+        Args:
+            transfer_ref: Transfer referans numarası
+            urun_id: Ürün ID
+            kaynak_magaza_id: Kaynak mağaza ID
+            hedef_magaza_id: Hedef mağaza ID
+            miktar: Transfer miktarı
+            kaynak_depo_id: Kaynak depo ID
+            hedef_depo_id: Hedef depo ID
+            kullanici_id: Kullanıcı ID
+            
+        Returns:
+            tuple: (cikis_hareket_id, giris_hareket_id)
+        """
+        # Çıkış hareketi (kaynak)
+        cikis_hareket = StokHareketDTO(
+            urun_id=urun_id,
+            magaza_id=kaynak_magaza_id,
+            depo_id=kaynak_depo_id,
+            hareket_tipi="TRANSFER_CIKIS",
+            miktar=-miktar,  # Negatif (çıkış)
+            aciklama=f"Transfer çıkışı - Ref: {transfer_ref} - Hedef: M{hedef_magaza_id}D{hedef_depo_id or 0}",
+            kullanici_id=kullanici_id,
+            referans_tablo="stok_transferleri",
+            referans_id=None
+        )
+        
+        # Giriş hareketi (hedef)
+        giris_hareket = StokHareketDTO(
+            urun_id=urun_id,
+            magaza_id=hedef_magaza_id,
+            depo_id=hedef_depo_id,
+            hareket_tipi="TRANSFER_GIRIS",
+            miktar=miktar,  # Pozitif (giriş)
+            aciklama=f"Transfer girişi - Ref: {transfer_ref} - Kaynak: M{kaynak_magaza_id}D{kaynak_depo_id or 0}",
+            kullanici_id=kullanici_id,
+            referans_tablo="stok_transferleri",
+            referans_id=None
+        )
+        
+        # Hareketleri kaydet
+        cikis_hareket_id = self._hareket_repository.hareket_ekle(cikis_hareket)
+        giris_hareket_id = self._hareket_repository.hareket_ekle(giris_hareket)
+        
+        return cikis_hareket_id, giris_hareket_id
+    
+    def _kaynak_bakiye_guncelle(self, kaynak_bakiye: StokBakiyeDTO, miktar: Decimal) -> None:
+        """
+        Kaynak bakiyeyi günceller
+        
+        Args:
+            kaynak_bakiye: Kaynak bakiye bilgisi
+            miktar: Transfer miktarı
+        """
+        yeni_kaynak_miktar = kaynak_bakiye.miktar - miktar
+        yeni_kaynak_kullanilabilir = kaynak_bakiye.kullanilabilir_miktar - miktar
+        
+        self._bakiye_repository.bakiye_guncelle(
+            kaynak_bakiye.id,
+            yeni_kaynak_miktar,
+            kaynak_bakiye.rezerve_miktar,
+            yeni_kaynak_kullanilabilir,
+            None,  # birim_fiyat
+            datetime.utcnow()
+        )
+    
+    def _hedef_bakiye_guncelle(self,
+                              urun_id: int,
+                              hedef_magaza_id: int,
+                              hedef_depo_id: Optional[int],
+                              miktar: Decimal) -> None:
+        """
+        Hedef bakiyeyi günceller veya oluşturur
+        
+        Args:
+            urun_id: Ürün ID
+            hedef_magaza_id: Hedef mağaza ID
+            hedef_depo_id: Hedef depo ID
+            miktar: Transfer miktarı
+        """
+        hedef_bakiye = self._bakiye_repository.bakiye_getir(
+            urun_id, hedef_magaza_id, hedef_depo_id
+        )
+        
+        if hedef_bakiye:
+            # Mevcut bakiyeyi güncelle
+            yeni_hedef_miktar = hedef_bakiye.miktar + miktar
+            yeni_hedef_kullanilabilir = hedef_bakiye.kullanilabilir_miktar + miktar
+            
+            self._bakiye_repository.bakiye_guncelle(
+                hedef_bakiye.id,
+                yeni_hedef_miktar,
+                hedef_bakiye.rezerve_miktar,
+                yeni_hedef_kullanilabilir,
+                None,  # birim_fiyat
+                datetime.utcnow()
+            )
+        else:
+            # Yeni bakiye oluştur
+            yeni_hedef_bakiye = StokBakiyeDTO(
+                urun_id=urun_id,
+                magaza_id=hedef_magaza_id,
+                depo_id=hedef_depo_id,
+                miktar=miktar,
+                rezerve_miktar=Decimal('0'),
+                kullanilabilir_miktar=miktar,
+                son_hareket_tarihi=datetime.utcnow()
+            )
+            
+            self._bakiye_repository.bakiye_ekle(yeni_hedef_bakiye)
     
     def _validate_transfer_parametreleri(self,
                                        urun_id: int,

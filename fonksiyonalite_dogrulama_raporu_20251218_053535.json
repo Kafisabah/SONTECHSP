@@ -1,0 +1,67 @@
+{
+  "ui_testleri": {
+    "ebelge_ekrani": {
+      "durum": "HATA",
+      "mesaj": "E-Belge modülleri import edilemedi: No module named 'uygulama.arayuz.taban_ekran'"
+    },
+    "raporlar_ekrani": {
+      "durum": "HATA",
+      "mesaj": "Raporlar modülleri import edilemedi: No module named 'sontechsp.uygulama.arayuz.raporlar'"
+    },
+    "ayarlar_ekrani": {
+      "durum": "HATA",
+      "mesaj": "Ayarlar modülleri import edilemedi: No module named 'sontechsp.uygulama.arayuz.ayarlar'"
+    }
+  },
+  "is_kurallari": {
+    "stok_kurallari": {
+      "durum": "HATA",
+      "mesaj": "transfer_yap fonksiyonu bulunamadı"
+    },
+    "pos_kurallari": {
+      "durum": "HATA",
+      "mesaj": "POS servis fonksiyonları eksik"
+    },
+    "repository_kurallari": {
+      "durum": "HATA",
+      "mesaj": "Repository sınıfları import edilemedi: cannot import name 'satis_crud' from 'sontechsp.uygulama.moduller.pos.depolar' (D:\\SONTECHSP\\sontechsp\\uygulama\\moduller\\pos\\depolar\\__init__.py)"
+    }
+  },
+  "api_sozlesmeleri": {
+    "servis_arayuzleri": {
+      "durum": "BASARILI",
+      "mesaj": "Servis arayüzleri korunmuş"
+    },
+    "dto_yapilari": {
+      "durum": "HATA",
+      "mesaj": "DTO yapıları import edilemedi: No module named 'sontechsp.uygulama.moduller.pos.dto'"
+    },
+    "repository_arayuzleri": {
+      "durum": "HATA",
+      "mesaj": "Repository arayüzleri import edilemedi: cannot import name 'satis_repository' from 'sontechsp.uygulama.moduller.pos.depolar' (D:\\SONTECHSP\\sontechsp\\uygulama\\moduller\\pos\\depolar\\__init__.py)"
+    }
+  },
+  "import_testleri": {
+    "dongüsel_import": {
+      "durum": "HATA",
+      "mesaj": "Import hatası (döngüsel import olabilir): cannot import name 'ebelge' from 'sontechsp.uygulama.arayuz' (D:\\SONTECHSP\\sontechsp\\uygulama\\arayuz\\__init__.py)"
+    },
+    "eksik_import": {
+      "durum": "HATA",
+      "mesaj": "Eksik import tespit edildi: No module named 'sontechsp.uygulama.arayuz.ebelge'"
+    },
+    "init_dosyalari": {
+      "durum": "HATA",
+      "mesaj": "__init__.py export hatası: No module named 'sontechsp.uygulama.arayuz.ebelge'"
+    }
+  },
+  "genel_durum": "HATA",
+  "ozet": {
+    "toplam_test": 12,
+    "basari_sayisi": 1,
+    "hata_sayisi": 11,
+    "basari_orani": 8.333333333333332,
+    "durum_mesaji": "❌ Kritik hatalar mevcut (8.3% başarı)",
+    "test_tarihi": "2025-12-18T05:35:35.668602"
+  }
+}
