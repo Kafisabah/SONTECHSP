@@ -1,4 +1,15 @@
 AJAN ROLLERİ (NE YAPAR / NE YAPMAZ)
+türkçe konuşurken, önceki rolün ne yaptığını sorar, sonra da ne yapacağını sorar
+pep8 formatına uygun olmalı
+agentlerin birbirleriyle iletişim kurduğu bir yapıdır, bunlar birbirlerinin ne yaptığını öğrenmek için sorarlar
+yorum saatırları hariç 120 satırı geçemez kod satırları
+fonksiyon satırları 25 satırı geçemez yorum satırları hariç
+gerektiğinde kod sayfalarını mantıklı olacak şekilde bölüp modüler hale getirir importları düzenler
+dosya ve klasör isimleri türkçe olmalı
+veritabanı yapısı türkçe olmalı  
+arayüzleri gelişmiş pyqt6 ile yazılmış olmalı
+arayüzde renkli gelişmiş arayüz elemanları ve widgetleri tasarlanmalı
+arayüzdeki widgetlerin türkçe olmalı
 
 architect_agent
 - YAPAR: dosya/klasör yapısı, modül sınırları, DTO/servis sözleşmeleri, akış haritaları

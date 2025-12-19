@@ -17,14 +17,14 @@ import shutil
 from pathlib import Path
 from hypothesis import given, strategies as st, settings, HealthCheck
 
-from uygulama.kurulum.klasorler import (
+from sontechsp.uygulama.kurulum.klasorler import (
     klasorleri_olustur,
     klasor_var_mi,
     eksik_klasorleri_listele,
-    klasor_yolunu_dogrula
+    klasor_yolunu_dogrula,
 )
-from uygulama.kurulum.sabitler import GEREKLI_KLASORLER
-from uygulama.kurulum import KlasorHatasi
+from sontechsp.uygulama.kurulum.sabitler import GEREKLI_KLASORLER
+from sontechsp.uygulama.kurulum import KlasorHatasi
 
 
 class TestKlasorIdempotentlik:
@@ -38,11 +38,11 @@ class TestKlasorIdempotentlik:
         # İlk çalıştırma
         klasorleri_olustur(gecici_dizin)
         ilk_durum = klasor_var_mi(gecici_dizin)
-        
+
         # İkinci çalıştırma
         klasorleri_olustur(gecici_dizin)
         ikinci_durum = klasor_var_mi(gecici_dizin)
-        
+
         # Her iki durumda da tüm klasörler mevcut olmalı
         assert ilk_durum == True
         assert ikinci_durum == True
@@ -55,10 +55,10 @@ class TestKlasorIdempotentlik:
         # n kez çalıştır
         for _ in range(calistirma_sayisi):
             klasorleri_olustur(gecici_dizin)
-        
+
         # Tüm klasörler mevcut olmalı
         assert klasor_var_mi(gecici_dizin) == True
-        
+
         # Eksik klasör olmamalı
         eksik_klasorler = eksik_klasorleri_listele(gecici_dizin)
         assert len(eksik_klasorler) == 0
@@ -68,36 +68,36 @@ class TestKlasorIdempotentlik:
         # Önce bazı klasörleri manuel oluştur
         test_klasor = gecici_dizin / GEREKLI_KLASORLER[0]
         test_klasor.mkdir(parents=True, exist_ok=True)
-        
+
         # Test dosyası ekle
         test_dosya = test_klasor / "test.txt"
         test_dosya.write_text("test içeriği")
-        
+
         # Klasör oluşturma işlemini çalıştır
         klasorleri_olustur(gecici_dizin)
-        
+
         # Test dosyası korunmuş olmalı
         assert test_dosya.exists()
         assert test_dosya.read_text() == "test içeriği"
-        
+
         # Tüm klasörler mevcut olmalı
         assert klasor_var_mi(gecici_dizin) == True
 
-    @given(st.text(min_size=1, max_size=20, alphabet=st.characters(whitelist_categories=('Lu', 'Ll', 'Nd'))))
+    @given(st.text(min_size=1, max_size=20, alphabet=st.characters(whitelist_categories=("Lu", "Ll", "Nd"))))
     @settings(max_examples=10, suppress_health_check=[HealthCheck.function_scoped_fixture])
     def test_farkli_proje_kokleri_idempotentligi(self, alt_dizin_adi):
         """Farklı proje kök dizinlerinde idempotentlik korunmalı"""
         with tempfile.TemporaryDirectory() as temp_dir:
             proje_koku = Path(temp_dir) / alt_dizin_adi
             proje_koku.mkdir(parents=True, exist_ok=True)
-            
+
             # İki kez çalıştır
             klasorleri_olustur(proje_koku)
             ilk_durum = klasor_var_mi(proje_koku)
-            
+
             klasorleri_olustur(proje_koku)
             ikinci_durum = klasor_var_mi(proje_koku)
-            
+
             assert ilk_durum == ikinci_durum == True
 
 
@@ -144,10 +144,10 @@ class TestEksikKlasorler:
         # İlk iki klasörü oluştur
         for i in range(2):
             (gecici_dizin / GEREKLI_KLASORLER[i]).mkdir(parents=True, exist_ok=True)
-        
+
         eksik_klasorler = eksik_klasorleri_listele(gecici_dizin)
         beklenen_eksikler = GEREKLI_KLASORLER[2:]
-        
+
         assert set(eksik_klasorler) == set(beklenen_eksikler)
 
 
@@ -173,5 +173,5 @@ class TestKlasorYoluDogrulama:
             pass
 
 
-if __name__ == '__main__':
-    pytest.main([__file__, '-v'])
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])

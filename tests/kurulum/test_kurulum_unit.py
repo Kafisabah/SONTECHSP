@@ -14,14 +14,14 @@ import tempfile
 import shutil
 from pathlib import Path
 
-from uygulama.kurulum import (
+from sontechsp.uygulama.kurulum import (
     KurulumHatasi,
     DogrulamaHatasi,
     KlasorHatasi,
     AyarHatasi,
     MigrationHatasi,
     KullaniciHatasi,
-    logger
+    logger,
 )
 
 
@@ -95,10 +95,10 @@ class TestYardimcilar(unittest.TestCase):
         """Geçici dosya oluşturma yardımcısını test et"""
         test_file = self.test_dir / "test.txt"
         test_file.write_text("test içeriği")
-        
+
         self.assertTrue(test_file.exists())
         self.assertEqual(test_file.read_text(), "test içeriği")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

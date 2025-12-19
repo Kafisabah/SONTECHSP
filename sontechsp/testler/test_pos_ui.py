@@ -50,11 +50,7 @@ def mock_sepet_service():
     """Mock sepet service fixture'ı"""
     service = Mock()
     service.yeni_sepet_olustur.return_value = 1
-    service.sepet_bilgisi_getir.return_value = {
-        'id': 1,
-        'toplam_tutar': Decimal('50.00'),
-        'durum': 'AKTIF'
-    }
+    service.sepet_bilgisi_getir.return_value = {"id": 1, "toplam_tutar": Decimal("50.00"), "durum": "AKTIF"}
     service.barkod_ekle.return_value = True
     service.urun_adedi_degistir.return_value = True
     service.satir_sil.return_value = True
@@ -76,11 +72,11 @@ def mock_iade_service():
     """Mock iade service fixture'ı"""
     service = Mock()
     service.satis_bilgisi_getir.return_value = {
-        'id': 1,
-        'satis_tarihi': '2025-12-16',
-        'kasiyer_adi': 'Test Kasiyer',
-        'toplam_tutar': Decimal('100.00'),
-        'durum': 'TAMAMLANDI'
+        "id": 1,
+        "satis_tarihi": "2025-12-16",
+        "kasiyer_adi": "Test Kasiyer",
+        "toplam_tutar": Decimal("100.00"),
+        "durum": "TAMAMLANDI",
     }
     service.iade_olustur.return_value = True
     return service
@@ -88,6 +84,21 @@ def mock_iade_service():
 
 class TestSepetEkrani:
     """Sepet ekranı testleri"""
-    
-    @patch('sontechsp.uygulama.moduller.pos.ui.sepet_ekrani.oturum_baglamini_al')
-    @patch('sonte
+
+    @patch("sontechsp.uygulama.moduller.pos.ui.sepet_ekrani.oturum_baglamini_al")
+    @patch("sontechsp.uygulama.moduller.pos.ui.sepet_ekrani.sepet_service_al")
+    def test_sepet_ekrani_yukleme(self, mock_service, mock_oturum_func, qapp, mock_oturum, mock_sepet_service):
+        """Sepet ekranı yükleme testi"""
+        # Mock'ları ayarla
+        mock_oturum_func.return_value = mock_oturum
+        mock_service.return_value = mock_sepet_service
+
+        # Ekranı oluştur
+        ekran = SepetEkrani()
+
+        # Temel kontroller
+        assert ekran is not None
+        assert hasattr(ekran, "sepet_service")
+
+        # Temizlik
+        ekran.close()
